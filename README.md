@@ -1,3 +1,8 @@
+# Ruby 1.9.3-p0 with Rails 3.1.1 Testprojekt
+
+Embrace the new goodness!
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
