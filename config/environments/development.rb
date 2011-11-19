@@ -15,6 +15,10 @@ Edge::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  # Do not send emails - show them instead
+  # config.action_mailer.delivery_method = :letter_opener
+  # for devise
+  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -27,4 +31,16 @@ Edge::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.generators do |g|
+    g.template_engine :haml
+    g.helper false
+    g.test_framework :rspec, :fixture =>true, :view_specs => false, :helper_specs => false
+    g.fixture_replacement :fabrication
+  end
+
+  # Set defaut SASS syntax
+  # config.sass.preferred_syntax = :sass
+
 end
+
