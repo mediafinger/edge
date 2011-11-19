@@ -3,17 +3,26 @@ source 'http://rubygems.org'
 gem 'rails',          '3.1.2'
 gem 'sqlite3',        '~> 1.3'
 gem 'jquery-rails',   '~> 1.0'
-gem 'execjs'
-gem 'therubyracer'
+gem 'execjs',         '~> 1.2'
+gem 'therubyracer',   '0.9.9'
 
 gem 'decent_exposure', '~> 1.0'
 #  gem draper
 
+#  gem 'omniauth'
 #  gem 'devise',     '~> 1.5'
 #  gem 'cancan'
 
+
 #  gem 'redcarpet',  '~> 1.17'
 #  gem 'carrierwave'
+#  gem 'dropbox-api'
+
+#  gem 'active_admin'
+#  gem 'kaminari'
+
+#  gem 'compass'
+#  gem 'compass-bootstrap'
 
 
 group :assets do
