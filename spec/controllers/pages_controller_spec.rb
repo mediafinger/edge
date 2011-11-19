@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PagesController do
 
-  describe "GET 'index'" do
+  describe "GET index" do
     it "returns http success" do
       get 'index'
       response.should be_success
@@ -10,3 +10,4 @@ describe PagesController do
   end
 
 end
+
