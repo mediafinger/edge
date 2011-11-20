@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Edge
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  .header= render 'shared/header'
+
+  %nav= render 'shared/nav'
+
+  %body
+
+    = yield
+
+  .footer= render 'shared/footer'
+

@@ -59,6 +59,6 @@ Edge::Application.configure do
   config.active_support.deprecation = :notify
 
   # for devise
-  # config.action_mailer.default_url_options = { :host => 'http://XXXXXXXXXXXXXXXXXXXXXXXXXXX/' }
+  config.action_mailer.default_url_options = { :host => 'http://onosono.herokuapp.com/' }
 end
 

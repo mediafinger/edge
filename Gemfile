@@ -6,12 +6,14 @@ gem 'jquery-rails',   '~> 1.0'
 gem 'execjs',         '~> 1.2'
 gem 'therubyracer',   '0.9.9'
 
-gem 'decent_exposure', '~> 1.0'
-#  gem draper
+gem 'devise',     '~> 1.5'
 
 #  gem 'omniauth'
-#  gem 'devise',     '~> 1.5'
+#  gem 'omniauth-twitter'
 #  gem 'cancan'
+
+#  gem 'decent_exposure', '~> 1.0'
+#  gem draper
 
 
 #  gem 'redcarpet',  '~> 1.17'

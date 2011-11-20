@@ -1,5 +1,7 @@
 Edge::Application.routes.draw do
 
+  devise_for :users
+
   root :to => 'pages#index'
 
   # Sample of regular route:
@@ -47,4 +49,26 @@ Edge::Application.routes.draw do
   #   end
 
 end
+
+
+# 'missing route'??
+# new_user_session    GET       /users/sign_in      { :controller => "devise/sessions", :action => "new" }
+
+
+#== Route Map
+# Generated on 20 Nov 2011 12:32
+#
+#             user_session POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
+#     destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}
+#            user_password POST   /users/password(.:format)      {:action=>"create", :controller=>"devise/passwords"}
+#        new_user_password GET    /users/password/new(.:format)  {:action=>"new", :controller=>"devise/passwords"}
+#       edit_user_password GET    /users/password/edit(.:format) {:action=>"edit", :controller=>"devise/passwords"}
+#                          PUT    /users/password(.:format)      {:action=>"update", :controller=>"devise/passwords"}
+# cancel_user_registration GET    /users/cancel(.:format)        {:action=>"cancel", :controller=>"devise/registrations"}
+#        user_registration POST   /users(.:format)               {:action=>"create", :controller=>"devise/registrations"}
+#    new_user_registration GET    /users/sign_up(.:format)       {:action=>"new", :controller=>"devise/registrations"}
+#   edit_user_registration GET    /users/edit(.:format)          {:action=>"edit", :controller=>"devise/registrations"}
+#                          PUT    /users(.:format)               {:action=>"update", :controller=>"devise/registrations"}
+#                          DELETE /users(.:format)               {:action=>"destroy", :controller=>"devise/registrations"}
+#                     root        /                              {:controller=>"pages", :action=>"index"}
 
