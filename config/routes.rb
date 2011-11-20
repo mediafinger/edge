@@ -2,6 +2,12 @@ Edge::Application.routes.draw do
 
   devise_for :users
 
+# Could not find devise mapping for path
+#   "/auth/twitter/callback?oauth_token=mj0IoYngz6w1rxZSEGLY6wXGE5L8Eb3CyYvRgSbVY&oauth_verifier=pOX32MvHEhLUqSm6quVAZMakhz5O2nUKmiMzfDlTj1I".
+# Maybe you forgot to wrap your route inside the scope block?
+# For example: devise_scope :user do match "/some/route" => "some_devise_controller" end
+  match '/auth/:provider/callback', :to => 'devise/sessions#create'
+
   root :to => 'pages#index'
 
   # Sample of regular route:
@@ -56,7 +62,7 @@ end
 
 
 #== Route Map
-# Generated on 20 Nov 2011 12:32
+# Generated on 20 Nov 2011 13:36
 #
 #             user_session POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
 #     destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}

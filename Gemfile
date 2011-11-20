@@ -7,9 +7,9 @@ gem 'execjs',         '~> 1.2'
 gem 'therubyracer',   '0.9.9'
 
 gem 'devise',     '~> 1.5'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
-#  gem 'omniauth'
-#  gem 'omniauth-twitter'
 #  gem 'cancan'
 
 #  gem 'decent_exposure', '~> 1.0'
