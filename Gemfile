@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails',          '3.1.2'
-gem 'sqlite3',        '~> 1.3'
 gem 'jquery-rails',   '~> 1.0'
 gem 'execjs',         '~> 1.2'
 gem 'therubyracer',   '0.9.9'
@@ -26,6 +25,10 @@ gem 'omniauth-twitter'
 #  gem 'compass'
 #  gem 'compass-bootstrap'
 
+group :production do
+  gem 'pg'
+end
+
 
 group :assets do
   gem 'haml-rails',   '~> 0.3'
@@ -37,10 +40,10 @@ end
 
 group :development, :test do
 ## for development
+  gem 'sqlite3',        '~> 1.3'
   # call 'bundle exec annotate [-r]' to annotate models, specs and routes.rb
   gem 'annotate',       :git => 'git://github.com/ctran/annotate_models.git'
   gem 'awesome_print',  '~> 0.4'
-  gem 'nifty-generators'
 
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
