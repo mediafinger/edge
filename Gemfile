@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails',          '3.1.2'
+gem 'rails',          '3.1.3'
 gem 'jquery-rails',   '~> 1.0'
 gem 'execjs',         '~> 1.2'
 gem 'therubyracer',   '0.9.9'
@@ -63,7 +63,7 @@ group :development, :test do
   gem 'rb-inotify'                          # for Linux notification support
   gem 'libnotify'                           # for Linux notification support
   #  gem 'rb-fsevent',   :require => false  # for OS X only
-  #  gem 'growl_notify'                     # for OS X only
+  #  gem 'growl_notify', :require => false  # for OS X only
 
 end
 

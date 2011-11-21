@@ -4,7 +4,11 @@
     = link_to image_tag("iconics/key.png", :size => "32x32", :alt => "sign out"), destroy_user_session_path, :method => :delete
   - else
     = link_to image_tag("iconics/key.png", :size => "32x32", :alt => "sign in"), new_user_session_path
-    %div
-      %a.auth_provider{:href => "/auth/twitter"}
-        = image_tag "auth/twitter_32.png", :size => "32x32", :alt => "Twitter"
+
+%div
+  %a.auth_provider{:href => "/auth/twitter"}
+    = image_tag "auth/twitter_32.png", :size => "32x32", :alt => "Twitter"
+
+%div
+  = link_to image_tag("iconics/link.png", :size => "32x32", :alt => "your linked authentication services"), authentications_url
 
