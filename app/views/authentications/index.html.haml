@@ -15,20 +15,16 @@
 - else
   %p
     %strong Sign in through one of these services:
-%a.auth_provider{:href => "/auth/twitter"}
-  = image_tag "auth/twitter_32.png", :size => "32x32", :alt => "Twitter"
-  Twitter
-%a.auth_provider{:href => "/auth/google_apps"}
-  = image_tag "auth/google_32.png", :size => "32x32", :alt => "Google"
-  Google
-%a.auth_provider{:href => "/auth/github"}
-  = image_tag "auth/github_32.png", :size => "32x32", :alt => "GitHub"
-  GitHub
-%a.auth_provider{:href => "/auth/facebook"}
-  = image_tag "auth/facebook_32.png", :size => "32x32", :alt => "Facebook"
-  Facebook
-%a.auth_provider{:href => "/auth/open_id"}
-  = image_tag "auth/openid_32.png", :size => "32x32", :alt => "OpenID"
-  OpenID
+
+.auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter') + 'Twitter', "/auth/twitter")
+
+.auth_provider= link_to(image_tag('auth/google_32.png', :class => 'gfx', :alt => 'Google') + 'Google', "/auth/google_apps")
+
+.auth_provider= link_to(image_tag('auth/github_32.png', :class => 'gfx', :alt => 'GitHub') + 'GitHub', "/auth/github")
+
+.auth_provider= link_to(image_tag('auth/facebook_32.png', :class => 'gfx', :alt => 'Facebook') + 'Facebook', "/auth/facebook")
+
+.auth_provider= link_to(image_tag('auth/openid_32.png', :class => 'gfx', :alt => 'OpenID') + 'OpenID', "/auth/open_id")
+
 .clear
 

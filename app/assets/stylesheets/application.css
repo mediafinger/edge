@@ -6,32 +6,49 @@
  *= require_tree .
 */
 
+body {
+  padding: 10px;
+  margin: 5px;
+  color: #225599;
+  font-size: 1.0em;
+  font-family: 'sans-serif';
+  background-color: #fff8dc;
+  font-weight: normal;
+}
+
+.content {
+  padding: 10px;
+  padding-top: 15px;
+  margin: 5px;
+}
 
 nav {
   width: 240px;
   height: 400px;
-  padding: 20px;
-  margin: 10px;
-  float: left;
-  background-color: #ccddee;
-}
-
-body {
   padding: 10px;
+  margin: 10px;
+  margin-left: 5px;
+  border: 2px dotted;
+  float: left;
+  background-color: #f5deb3;
 }
 
 .header {
   width: 80%;
   border: 2px dotted;
   padding: 10px;
+  margin: 5px;
 }
 
 .footer {
   width: 80%;
   height: 80px;
   padding: 10px;
+  padding-top: 15px;
+  margin: 5px;
   clear: both;
-  background-color: #eeccaa;
+  /* background-color: #eeccaa; */
+  /* background: rgba(255,255,255, 0.8); */
   border: 2px dotted;
 }
 
@@ -53,5 +70,52 @@ body {
 
 img {
   border: 0px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.gfx {
+  width: 32px;
+  height: 32px;
+}
+
+a {
+  color: #ff8c00;
+  text-decoration: none;
+}
+
+a.hover {
+  text-decoration: underline;
+}
+
+.auth_provider {
+  width: 60px;
+  height: 60px;
+  padding: 6px;
+  float: left;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+strong {
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Round corners */
+
+.round {
+  -moz-border-radius:    16px;
+  -webkit-border-radius: 16px;
+  border-radius:         16px;
 }
 
