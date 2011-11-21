@@ -1,8 +1,10 @@
 %div
   - if user_signed_in?
-    = "Signed in as: #{current_user.email}."
-    %br
-    = link_to('sign out', destroy_user_session_path, :method => :delete)
+    = "signed in as: #{current_user.email} "
+    = link_to image_tag("iconics/key.png", :size => "32x32", :alt => "sign out"), destroy_user_session_path, :method => :delete
   - else
-    = link_to('sign in', new_user_session_path)
+    = link_to image_tag("iconics/key.png", :size => "32x32", :alt => "sign in"), new_user_session_path
+    %div
+      %a.auth_provider{:href => "/auth/twitter"}
+        = image_tag "auth/twitter_32.png", :size => "32x32", :alt => "Twitter"
 

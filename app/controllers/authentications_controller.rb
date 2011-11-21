@@ -5,8 +5,24 @@ class AuthenticationsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
-    redirect_to authentications_url, :notice => "Authentication successful."
+    authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
+    if authentication                                             # auth known, user not logged in
+      flash[:notice] = "Signed in successfully."
+      sign_in_and_redirect(:user, authentication.user)
+    elsif current_user                                            # auth not known, user logged in
+      current_user.authentications.create(:provider => auth['provider'], :uid => auth['uid'])
+      redirect_to authentications_url, :notice => "Authentication successful."
+    else                                                          # auth not known, user not logged in
+      user = User.new
+      user.authentications.build(:provider => auth['provider'], :uid => auth['uid'])
+      if user.save
+        flash[:notice] = "Signed in successfully."
+        sign_in_and_redirect(:user, user)
+      else
+        session[:auth] = auth.except('extra')
+        redirect_to new_user_registration_url
+      end
+    end
   end
 
   def destroy
