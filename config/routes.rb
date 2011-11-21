@@ -1,14 +1,19 @@
 Edge::Application.routes.draw do
 
+  match '/auth/:provider/callback', :to => 'authentications#create'
+  match 'auth/failure',             :to => 'authentications#index'
+
   devise_for :users
+
+  resources :authentications
+
+  root :to => 'pages#index'
 
 # Could not find devise mapping for path
 #   "/auth/twitter/callback?oauth_token=mj0IoYngz6w1rxZSEGLY6wXGE5L8Eb3CyYvRgSbVY&oauth_verifier=pOX32MvHEhLUqSm6quVAZMakhz5O2nUKmiMzfDlTj1I".
 # Maybe you forgot to wrap your route inside the scope block?
 # For example: devise_scope :user do match "/some/route" => "some_devise_controller" end
-  match '/auth/:provider/callback', :to => 'devise/sessions#create'
 
-  root :to => 'pages#index'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

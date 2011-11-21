@@ -40,6 +40,7 @@ group :development, :test do
   # call 'bundle exec annotate [-r]' to annotate models, specs and routes.rb
   gem 'annotate',       :git => 'git://github.com/ctran/annotate_models.git'
   gem 'awesome_print',  '~> 0.4'
+  gem 'nifty-generators'
 
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
@@ -49,6 +50,7 @@ group :development, :test do
   gem 'ffaker',         '~> 1.10'
 #  gem 'capybara'
   gem 'turn',           :require => false
+  gem "mocha"
 
   # for an autotest-ish workflow:
   gem 'spin',         '~> 0.1'
