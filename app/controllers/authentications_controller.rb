@@ -14,7 +14,7 @@ class AuthenticationsController < ApplicationController
       redirect_to authentications_url, :notice => "Authentication successful."
     else                                                          # auth not known, user not logged in
       user = User.new
-      user.authentications.build(:provider => auth['provider'], :uid => auth['uid'])
+      user.apply_omniauth(auth)
       if user.save
         flash[:notice] = "Signed in successfully."
         sign_in_and_redirect(:user, user)
