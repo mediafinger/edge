@@ -4,6 +4,7 @@ config/*.yml
 vendor/bundle
 .rvmrc
 .rbenv
+.rbfu
 .bundle
 db/*.sqlite3
 log/*.log*
