@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
   gem 'rails',          '3.1.3'
+
+  gem 'haml-rails',   '~> 0.3'
   gem 'jquery-rails',   '~> 1.0'
   gem 'execjs',         '~> 1.2'
   gem 'therubyracer',   '0.9.9'
@@ -14,7 +16,6 @@ source 'http://rubygems.org'
 #  gem 'decent_exposure', '~> 1.0'
 #  gem draper
 
-
 #  gem 'redcarpet',  '~> 1.17'
 #  gem 'carrierwave'
 #  gem 'dropbox-api'
@@ -25,12 +26,11 @@ source 'http://rubygems.org'
 #  gem 'compass'
 #  gem 'compass-bootstrap'
 
+
 group :production do
   gem 'pg'
 end
 
-
-  gem 'haml-rails',   '~> 0.3'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1'
@@ -42,7 +42,6 @@ end
 group :development, :test do
 ## for development
   gem 'sqlite3',        '~> 1.3'
-  # call 'bundle exec annotate [-r]' to annotate models, specs and routes.rb
   gem 'annotate',       :git => 'git://github.com/ctran/annotate_models.git'
   gem 'awesome_print',  '~> 0.4'
 
