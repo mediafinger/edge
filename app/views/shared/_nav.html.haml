@@ -1,13 +1,10 @@
 %div
   - if user_signed_in?
     = "signed in as:"
-    = link_to current_user.email, "mailto:current_user.email"
+    %p= link_to current_user.email, "mailto:current_user.email"
     = link_to image_tag("iconics/key.png", :class => "icon", :alt => "sign out"), destroy_user_session_path, :method => :delete
+    = link_to image_tag("iconics/link.png", :class => "icon", :alt => "your linked authentication services"), authentications_url
   - else
     = link_to image_tag("iconics/key.png", :class => "icon", :alt => "sign in"), new_user_session_path
-
-.auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter') + 'click to login', "/auth/twitter")
-
-%br
-= link_to image_tag("iconics/link.png", :class => "icon", :alt => "your linked authentication services"), authentications_url
+    .auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter'), "/auth/twitter")
 

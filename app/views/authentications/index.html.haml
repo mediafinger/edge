@@ -4,12 +4,11 @@
       %strong You can sign in to this account using:
     .authentications
       - for authentication in @authentications
-        .authentication
-          = image_tag "auth/#{authentication.provider}_32.png", :size => "32x32"
-          .provider= authentication.provider
-          .uid= authentication.uid
-          = link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"                                                      |
-      .clear
+        .authentication.round
+          = image_tag "auth/#{authentication.provider}_32.png", :class => 'gfx'
+          = link_to image_tag("iconics/x_28x28.png", :class => "icon", :alt => "remove"), authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
+          .provider= authentication.provider.humanize
+          .uid= "ID: #{authentication.uid}"
   %p
     %strong Add another service to sign in with:
 - else
@@ -17,14 +16,8 @@
     %strong Sign in through one of these services:
 
 .auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter') + 'Twitter', "/auth/twitter")
-
 .auth_provider= link_to(image_tag('auth/google_32.png', :class => 'gfx', :alt => 'Google') + 'Google', "/auth/google_apps")
-
 .auth_provider= link_to(image_tag('auth/github_32.png', :class => 'gfx', :alt => 'GitHub') + 'GitHub', "/auth/github")
-
 .auth_provider= link_to(image_tag('auth/facebook_32.png', :class => 'gfx', :alt => 'Facebook') + 'Facebook', "/auth/facebook")
-
 .auth_provider= link_to(image_tag('auth/openid_32.png', :class => 'gfx', :alt => 'OpenID') + 'OpenID', "/auth/open_id")
-
-.clear
 
