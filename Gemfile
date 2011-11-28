@@ -1,14 +1,15 @@
 source 'http://rubygems.org'
 
-  gem 'rails',          '3.1.3'
+  gem 'rake',         '~> 0.9'
+  gem 'rails',        '3.1.3'
 
   gem 'haml-rails',   '~> 0.3'
-  gem 'jquery-rails',   '~> 1.0'
-  gem 'execjs',         '~> 1.2'
-  gem 'therubyracer',   '0.9.9'
+  gem 'jquery-rails', '~> 1.0'
+  gem 'execjs',       '~> 1.2'
+  gem 'therubyracer', '0.9.9'
 
-  gem 'devise',     '~> 1.5'
-  gem 'omniauth'
+  gem 'devise',       '~> 1.5'
+  gem 'omniauth',     '~> 1.0'
   gem 'omniauth-twitter'
 
 #  gem 'cancan'
@@ -16,7 +17,7 @@ source 'http://rubygems.org'
 #  gem 'decent_exposure', '~> 1.0'
 #  gem draper
 
-#  gem 'redcarpet',  '~> 1.17'
+#  gem 'rdiscount'
 #  gem 'carrierwave'
 #  gem 'dropbox-api'
 
@@ -60,8 +61,8 @@ group :development, :test do
   gem 'guard',        '~> 0.8'
   gem 'guard-rspec',  '~> 0.5'
   gem 'guard-spin',   '~> 0.1'
-  gem 'rb-inotify'                           # for Linux notification support
-  gem 'libnotify'                            # for Linux notification support
+  gem 'rb-inotify',   :require => false       # for Linux notification support
+  gem 'libnotify',    :require => false       # for Linux notification support
 #  gem 'rb-fsevent',   :require => false       # for OS X only
 #  gem 'growl_notify', :require => false       # for OS X only
 
