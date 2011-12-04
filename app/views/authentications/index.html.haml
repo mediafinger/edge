@@ -1,19 +1,22 @@
 - if @authentications
   - unless @authentications.empty?
     %p
-      %strong You can sign in to this account using:
+      %strong
+        = t('.sign_in_options')
     .authentications
       - for authentication in @authentications
         .authentication.round
           = image_tag "auth/#{authentication.provider}_32.png", :class => 'gfx'
-          = link_to image_tag("iconics/x_28x28.png", :class => "icon", :alt => "remove"), authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
+          = link_to image_tag("iconics/x_28x28.png", :class => "icon", :alt => "remove"), authentication, :confirm => t('.confirm_remove_service'), :method => :delete, :class => "remove"
           .provider= authentication.provider.humanize
           .uid= "ID: #{authentication.uid}"
   %p
-    %strong Add another service to sign in with:
+    %strong
+      = t('.add_sign_in_service')
 - else
   %p
-    %strong Sign in through one of these services:
+    %strong
+      = t('.sign_in_through')
 
 .auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter') + 'Twitter', "/auth/twitter")
 .auth_provider= link_to(image_tag('auth/google_32.png', :class => 'gfx', :alt => 'Google') + 'Google', "/auth/google_apps")

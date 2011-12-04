@@ -5,3 +5,4 @@
 require File.expand_path('../config/application', __FILE__)
 
 Edge::Application.load_tasks
+

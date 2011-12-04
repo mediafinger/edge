@@ -3,3 +3,27 @@
 
 en:
   hello: "Hello world"
+
+  authentications:
+    index:
+      add_sign_in_service: "Add another service to sign in with:"
+      confirm_remove_service: "Are you sure you want to remove this authentication option?"
+      sign_in_options: "You can sign in to this account using:"
+      sign_in_through: "Sign in through one of these services:"
+
+  shared:
+    header:
+      title: 'the edge'
+
+    nav:
+      linked_authentication_services: "your linked authentication services"
+      sign_in: "sign in:"
+      sign_out: "sign_out"
+      signed_in_as: "signed in as:"
+
+  #registration_controller:
+  authentication_successful: "Authentication successful."
+  destroy_authentication_success: "Successfully deleted authentication."
+  email_needed: "We need your emailaddress to create an account - but you can log in with %{provider} on future visits"
+  sign_in_successful: "Signed in successfully."
+

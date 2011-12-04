@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :authentications
+  has_many :authentications, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
 
   def apply_omniauth(omniauth)
+    twitter_attributes(omniauth)
     authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
 
@@ -18,5 +19,27 @@ class User < ActiveRecord::Base
     authentications.empty? || !password.blank? && super
   end
 
+  def twitter_attributes(hash)
+    self.nickname     = hash['info']['nickname']
+    #self.name         = hash['info']['name']
+    #self.location     = hash['info']['location']
+    #self.image        = hash['info']['image']
+    #self.description  = hash['info']['description']
+    #self.url          = hash['info']['urls']['Website']
+  end
+
 end
+
+
+
+
+#auth
+#  user_info:
+#  nickname: eifion
+#  name: Eifion
+#  location: North Wales
+#  image: http://a1.twimg.com/profile_images/434158309/Adium_Icon_normal.png
+#  description: Web developer using .Net and Windows by day and Ruby and Rails on OS X the rest of the time. I run http://asciicasts.com
+#  urls:
+#    Website: http://asciicasts.com
 
