@@ -32,5 +32,12 @@ class AuthenticationsController < ApplicationController
     @authentication.destroy
     redirect_to authentications_url, :notice => t('.destroy_authentication_success')
   end
+
+  # to stop devise from destroying all sessions, when trying to add OpenId and this appears:
+  # WARNING: Can't verify CSRF token authenticity
+  def handle_unverified_request
+    true
+  end
+
 end
 

@@ -11,6 +11,7 @@ source 'http://rubygems.org'
   gem 'devise',       '~> 1.5'
   gem 'omniauth',     '~> 1.0'
   gem 'omniauth-twitter'
+  gem 'omniauth-openid'
 
 #  gem 'cancan'
 

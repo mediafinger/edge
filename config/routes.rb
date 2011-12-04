@@ -67,7 +67,7 @@ end
 
 
 #== Route Map
-# Generated on 21 Nov 2011 02:09
+# Generated on 04 Dec 2011 23:36
 #
 #             auth_failure        /auth/failure(.:format)             {:controller=>"authentications", :action=>"index"}
 #         new_user_session GET    /users/sign_in(.:format)            {:action=>"new", :controller=>"devise/sessions"}

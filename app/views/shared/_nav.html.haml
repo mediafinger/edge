@@ -7,6 +7,7 @@
     = link_to image_tag("iconics/key.png", :class => "icon", :alt => t('.sign_out')), destroy_user_session_path, :method => :delete
     = link_to image_tag("iconics/link.png", :class => "icon", :alt => t('.linked_authentication_services')), authentications_url
   - else
-    = link_to image_tag("iconics/key.png", :class => "icon", :alt => t('.sign_in')), new_user_session_path
-    .auth_provider= link_to(image_tag('auth/twitter_32.png', :class => 'gfx', :alt => 'Twitter'), "/auth/twitter")
+    = link_to image_tag("iconics/key.png", :class => "icon",  :alt => t('.sign_in')), new_user_session_path
+    .auth_provider= link_to(image_tag('auth/twitter_32.png',  :class => 'gfx', :alt => 'Twitter'), "/auth/twitter")
+    .auth_provider= link_to(image_tag('auth/openid_32.png',   :class => 'gfx', :alt => 'OpenID'),  "/auth/open_id")
 
