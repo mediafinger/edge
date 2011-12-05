@@ -72,7 +72,6 @@ Edge::Application.configure do
     :domain           => ENV['SENDGRID_DOMAIN'],
     :enable_starttls_auto => true
   }
-  config.action_mailer.sender = "support@onosono.com"
 
 end
 
