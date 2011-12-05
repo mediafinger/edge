@@ -7,7 +7,7 @@ class AuthenticationsController < ApplicationController
     auth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
     if authentication                                             # auth known, user not logged in
-      flash[:notice] = t('.sign_in_successful')
+      flash[:notice] = t("devise.omniauth_callbacks.success", :kind => auth['provider'])          #t('.sign_in_successful')
       sign_in_and_redirect(:user, authentication.user)
     elsif current_user                                            # auth not known, user logged in
       current_user.apply_omniauth(auth)

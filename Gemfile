@@ -12,6 +12,8 @@ source 'http://rubygems.org'
   gem 'omniauth',     '~> 1.0'
   gem 'omniauth-twitter'
   gem 'omniauth-openid'
+  gem 'omniauth-facebook'
+  gem 'omniauth-github'
 
 #  gem 'cancan'
 

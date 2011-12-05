@@ -10,7 +10,11 @@ class User < ActiveRecord::Base
 
 
   def apply_omniauth(omniauth)
-    #self.email = omniauth['user_info']['email'] if email.blank?
+    data = omniauth.info
+    if data['email']
+      self.email = data['email'] if self.email.blank?
+    end
+
     # raise omniauth.to_json
 
     twitter_attributes(omniauth) if omniauth['provider'] == 'twitter'
