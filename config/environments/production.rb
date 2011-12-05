@@ -69,7 +69,7 @@ Edge::Application.configure do
     :authentication   => :plain,
     :user_name        => ENV['SENDGRID_USERNAME'],
     :passwords        => ENV['SENDGRID_PASSWORD'],
-    :domain           => ENV['SENDGRID_DOMAIN'],
+    :domain           => 'heroku.com',   # ENV['SENDGRID_DOMAIN'],
     :enable_starttls_auto => true
   }
 
