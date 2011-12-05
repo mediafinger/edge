@@ -60,5 +60,18 @@ Edge::Application.configure do
 
   # for devise
   config.action_mailer.default_url_options = { :host => 'http://onosono.herokuapp.com/' }
+
+  #for heroku
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :addresses        => 'smtp.sendgrid.net',
+    :port             => '587',
+    :authentication   => :plain,
+    :user_name        => ENV['SENDGRID_USERNAME'],
+    :passwords        => ENV['SENDGRID_PASSWORD'],
+    :domain           => 'heroku.com'
+  }
+
+
 end
 
