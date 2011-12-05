@@ -59,17 +59,17 @@ Edge::Application.configure do
   config.active_support.deprecation = :notify
 
   # for devise
-  config.action_mailer.default_url_options = { :host => 'http://onosono.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'onosono.herokuapp.com/' }
 
   #for heroku
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :addresses        => 'smtp.sendgrid.net',
     :port             => '587',
     :authentication   => :plain,
     :user_name        => ENV['SENDGRID_USERNAME'],
     :passwords        => ENV['SENDGRID_PASSWORD'],
-    :domain           => 'heroku.com',
+    :domain           => ENV['SENDGRID_DOMAIN'],
     :enable_starttls_auto => true
   }
 
