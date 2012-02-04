@@ -65,8 +65,8 @@ group :development, :test do
   gem 'guard-spin',         '~> 0.1'
   gem 'rb-inotify',         :require => false       # for Linux notification support
   gem 'libnotify',          :require => false       # for Linux notification support
-  #  gem 'rb-fsevent',      :require => false       # for OS X only
-  #  gem 'growl_notify',    :require => false       # for OS X only
+  gem 'rb-fsevent',      :require => false       # for OS X only
+  gem 'growl_notify',    :require => false       # for OS X only
 
 end
 
