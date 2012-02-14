@@ -3,6 +3,7 @@ class AuthenticationsController < ApplicationController
     @authentications = current_user.authentications if current_user
   end
 
+  # TODO handle case: user logged in, auth known (different user)
   def create
     auth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
