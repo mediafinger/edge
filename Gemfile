@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
   gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.1'
+  gem 'rails',              '3.2.2.rc1'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
 
@@ -54,18 +54,18 @@ group :development, :test do
   # for the tests
   gem 'rspec-rails',        '~> 2.7'
   gem 'fabrication',        '~> 1.2'
-  gem 'ffaker',             '~> 1.10'
-  #  gem 'capybara'
+  gem 'ffaker'
   gem 'turn',               :require => false
   gem 'mocha',              '~> 0.10'
+  gem 'shoulda-matchers'
 
   # for an autotest-ish workflow:
   gem 'spin',               '~> 0.1'
   gem 'guard',              '~> 1.0'
   gem 'guard-rspec',        '~> 0.5'
   gem 'guard-spin',         '~> 0.1'
-  gem 'rb-inotify',         :require => false       # for Linux notification support
-  gem 'libnotify',          :require => false       # for Linux notification support
+  # gem 'rb-inotify',         :require => false       # for Linux notification support
+  # gem 'libnotify',          :require => false       # for Linux notification support
   gem 'rb-fsevent',         :require => false       # for OS X only
   gem 'growl_notify',       :require => false       # for OS X only
 
