@@ -1,8 +1,12 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require 'spec_helper'
 
 describe AuthenticationsController do
-  fixtures :all
+  Fabricate(:authentication)
+  Fabricate(:twitter)
+  Fabricate(:openid)
   render_views
+
+  login_user  # devise helper from controller macros
 
   it "index action should render index template" do
     get :index

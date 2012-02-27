@@ -32,7 +32,11 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   # To test the content of sent emails
-  # config.include(MailerMacros)
-  # config.before(:each) { reset_email }
+  config.include(MailerMacros)
+  config.before(:each) { reset_email }
+
+  # Add Devise helpers for testing
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 end
 
