@@ -1,14 +1,16 @@
 source 'http://rubygems.org'
 
+  # running on ruby 1.9.3-p125
+
   gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.2.rc1'
+  gem 'rails',              '3.2.2'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
   gem 'execjs',             '~> 1.2'
-  gem 'therubyracer',       '0.9.9'
+  gem 'therubyracer',       '0.9.10'
 
   gem 'devise',             '~> 2.0'
   gem 'omniauth',           '~> 1.0'
@@ -19,7 +21,7 @@ source 'http://rubygems.org'
 
   #  gem 'cancan'
 
-  #  gem 'decent_exposure',   '~> 1.0'
+  #  gem 'decent_exposure'
   #  gem draper
 
   #  gem 'rdiscount'
@@ -34,7 +36,7 @@ source 'http://rubygems.org'
 
 
 group :production do
-  gem 'pg'
+  gem 'pg'          # ,   '~> 0.13'
 end
 
 
@@ -53,21 +55,20 @@ group :development, :test do
 
   # for the tests
   gem 'rspec-rails',        '~> 2.7'
-  gem 'fabrication',        '~> 1.2'
-  gem 'ffaker'
+  gem 'fabrication',        '~> 1.3'
+  gem 'ffaker',             '~> 1.13'
   gem 'turn',               :require => false
   gem 'mocha',              '~> 0.10'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers',   '~> 1.0'
 
   # for an autotest-ish workflow:
   gem 'spin',               '~> 0.1'
   gem 'guard',              '~> 1.0'
   gem 'guard-rspec',        '~> 0.5'
   gem 'guard-spin',         '~> 0.1'
-  # gem 'rb-inotify',         :require => false       # for Linux notification support
-  # gem 'libnotify',          :require => false       # for Linux notification support
   gem 'rb-fsevent',         :require => false       # for OS X only
   gem 'growl_notify',       :require => false       # for OS X only
-
+  # gem 'rb-inotify',         :require => false       # for Linux notification support
+  # gem 'libnotify',          :require => false       # for Linux notification support
 end
 
