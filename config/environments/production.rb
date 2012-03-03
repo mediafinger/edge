@@ -64,12 +64,12 @@ Edge::Application.configure do
   #for heroku
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :addresses        => 'smtp.sendgrid.net',
-    :port             => '587',
-    :authentication   => :plain,
-    :user_name        => ENV['SENDGRID_USERNAME'],
-    :passwords        => ENV['SENDGRID_PASSWORD'],
-    :domain           => 'heroku.com',   # ENV['SENDGRID_DOMAIN'],
+    :addresses            => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :domain               => 'heroku.com',   # ENV['SENDGRID_DOMAIN'],
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
+    :authentication       => :plain,
     :enable_starttls_auto => true
   }
 

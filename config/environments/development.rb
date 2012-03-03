@@ -14,11 +14,13 @@ Edge::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  # Use sendmail
+  config.action_mailer.delivery_method = :sendmail 
   # Do not send emails - show them instead
   # config.action_mailer.delivery_method = :letter_opener
   # for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:5000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -41,6 +43,15 @@ Edge::Application.configure do
 
   # Set defaut SASS syntax
   # config.sass.preferred_syntax = :sass
-
+  
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :addresses            => 'smtp.gmail.com',
+    :port                 => '587',
+    :domain               => 'gmail.com',
+    :user_name            => 'info@onosono.com',
+    :password             => ENV['EMAIL_PASSWORD_SUPPORT_ONOSONO'],
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
 end
-
