@@ -45,9 +45,6 @@ Edge::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
 
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
-
   # Enable threaded mode
   # config.threadsafe!
 
@@ -58,20 +55,36 @@ Edge::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  # Care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  # Send mail (yes, really!)
+  config.action_mailer.perform_deliveries = true
   # for devise
   config.action_mailer.default_url_options = { :host => 'onosono.herokuapp.com/' }
 
-  #for heroku
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :addresses            => 'smtp.sendgrid.net',
-    :port                 => '587',
-    :domain               => 'heroku.com',   # ENV['SENDGRID_DOMAIN'],
-    :user_name            => ENV['SENDGRID_USERNAME'],
-    :password             => ENV['SENDGRID_PASSWORD'],
-    :authentication       => :plain,
-    :enable_starttls_auto => true
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto =>  true,
+    :address              =>  'smtp.gmail.com',
+    :port                 =>  '587',               # '465',
+    # :tls                 =>  true,
+    :domain               =>  'onosono.com',
+    :authentication       =>  :plain,             # :login,
+    :user_name            =>  'info@onosono.com',
+    :password             =>  ENV['EMAIL_PASSWORD_SUPPORT_ONOSONO']
   }
+
+  #for heroku  ==> moved to initializers/mail.rb
+  # config.action_mailer.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :addresses            => 'smtp.sendgrid.net',
+  #   :port                 => '587',
+  #   :domain               => ENV['SENDGRID_DOMAIN'],
+  #   :user_name            => ENV['SENDGRID_USERNAME'],
+  #   :password             => ENV['SENDGRID_PASSWORD'],
+  #   :authentication       => :plain,
+  #   :enable_starttls_auto => true
+  # }
 
 end
 

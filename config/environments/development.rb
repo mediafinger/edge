@@ -13,15 +13,6 @@ Edge::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = true
-  # Use sendmail
-  config.action_mailer.delivery_method = :sendmail 
-  # Do not send emails - show them instead
-  # config.action_mailer.delivery_method = :letter_opener
-  # for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -44,14 +35,25 @@ Edge::Application.configure do
   # Set defaut SASS syntax
   # config.sass.preferred_syntax = :sass
   
+  # Do not send emails - show them instead
+  # ActionMailer::Base.delivery_method = :letter_opener
+  # Care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  # Send mail (yes, really!)
+  config.action_mailer.perform_deliveries = true
+  # for devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   config.action_mailer.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :addresses            => 'smtp.gmail.com',
-    :port                 => '587',
-    :domain               => 'gmail.com',
-    :user_name            => 'info@onosono.com',
-    :password             => ENV['EMAIL_PASSWORD_SUPPORT_ONOSONO'],
-    :authentication       => :plain,
-    :enable_starttls_auto => true
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto =>  true,
+    :address              =>  'smtp.gmail.com',
+    :port                 =>  '587',               # '465',
+    # :tls                 =>  true,
+    :domain               =>  'onosono.com',
+    :authentication       =>  :plain,             # :login,
+    :user_name            =>  'info@onosono.com',
+    :password             =>  ENV['EMAIL_PASSWORD_SUPPORT_ONOSONO']
   }
+
 end
