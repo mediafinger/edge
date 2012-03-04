@@ -74,17 +74,5 @@ Edge::Application.configure do
     :password             =>  ENV['EMAIL_PASSWORD_SUPPORT_ONOSONO']
   }
 
-  #for heroku  ==> moved to initializers/mail.rb
-  # config.action_mailer.delivery_method = :smtp
-  # ActionMailer::Base.smtp_settings = {
-  #   :addresses            => 'smtp.sendgrid.net',
-  #   :port                 => '587',
-  #   :domain               => ENV['SENDGRID_DOMAIN'],
-  #   :user_name            => ENV['SENDGRID_USERNAME'],
-  #   :password             => ENV['SENDGRID_PASSWORD'],
-  #   :authentication       => :plain,
-  #   :enable_starttls_auto => true
-  # }
-
 end
 
