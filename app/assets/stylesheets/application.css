@@ -4,52 +4,8 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree .
+ *= require bootstrap_and_overrides
 */
-
-body {
-  padding: 0.65em;
-  margin: 0.35em;
-  color: #225599;
-  font-size: 1.0em;
-  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #fff8dc;
-  font-weight: normal;
-}
-
-.content {
-  padding: 0.65em;
-  padding-bottom: 4em;
-  margin: 0.65em;
-  margin-left: 14em;
-}
-
-nav {
-  width: 12em;
-  padding: 0.65em;
-  padding-bottom: 10em;
-  margin: 0.65em;
-  margin-left: 0.35em;
-  border: 0.15em dotted;
-  float: left;
-  background-color: #f5deb3;
-}
-
-.header {
-  border: 0.15em dotted;
-  padding: 0.65em;
-  margin: 0.35em;
-}
-
-.footer {
-  height: 5em;
-  padding: 0.65em;
-  padding-top: 1em;
-  margin: 0.35em;
-  clear: both;
-  /* background-color: #eeccaa; */
-  /* background: rgba(255,255,255, 0.8); */
-  border: 0.15em dotted;
-}
 
 .flash {
   font-size: 1.2em;
@@ -72,22 +28,13 @@ img {
 }
 
 .icon {
-  width: 1.03em;   /* 16px; */
-  height: 1.03em; /* 16px; */
+  width: 1.8em;
+  height: 1.8em; /* 24px; */
 }
 
 .gfx {
-  width: 2.5em;   /* 32px; */
-  height: 2.5em; /* 32px; */
-}
-
-a {
-  color: #ff8c00;
-  text-decoration: none;
-}
-
-a.hover {
-  text-decoration: underline;
+  width: 3.6em;   /* 48px; */
+  height: 3.6em;
 }
 
 .authentication {
@@ -115,21 +62,8 @@ a.hover {
   text-decoration: none;
 }
 
-h2 {
-  font-size: 1.4em;
-  font-weight: 500;
-}
-
-strong {
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Round corners */
-
 .round {
-  -moz-border-radius:    1em;
-  -webkit-border-radius: 1em;
-  border-radius:         1em;
+  -moz-border-radius:     1em;
+  -webkit-border-radius:  1em;
+  border-radius:          1em;
 }
-

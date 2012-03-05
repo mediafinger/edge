@@ -1,6 +1,0 @@
-%div
-  - if user_signed_in?
-    = link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"), edit_user_registration_path
-  - else
-    = link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"), new_user_registration_path
-
