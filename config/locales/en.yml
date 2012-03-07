@@ -20,6 +20,7 @@ en:
       sign_in: "sign in:"
       sign_out: "sign_out"
       signed_in_as: "signed in as:"
+      welcome_back: "Welcome back :)"
 
   #registration_controller:
   authentication_successful: "Authentication successful."
