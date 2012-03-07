@@ -20,10 +20,10 @@ en:
       sign_in: "sign in:"
       sign_out: "sign_out"
       signed_in_as: "signed in as:"
-      welcome_back: "Welcome back :)"
 
   #registration_controller:
   authentication_successful: "Authentication successful."
+  authentication_bound_to_other_user: "Authentication bound to other user account!"
   destroy_authentication_success: "Successfully deleted authentication."
   email_needed: "We need your emailaddress to create an account - but you can log in with %{provider} on future visits"
   sign_in_successful: "Signed in successfully."
