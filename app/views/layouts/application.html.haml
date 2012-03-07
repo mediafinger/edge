@@ -53,7 +53,8 @@
                 %li= link_to image_tag("iconics/key.png", :class => "icon",  :alt => t('shared.nav.sign_in')), new_user_session_path
                 %li.auth_provider= link_to(image_tag('auth/twitter_32.png',  :class => 'gfx', :alt => 'Twitter'), "/auth/twitter")
                 %li.auth_provider= link_to(image_tag('auth/google_32.png',   :class => 'gfx', :alt => 'Google'),  "/auth/google")
-                %li.auth_provider= link_to(image_tag('auth/openid_32.png',   :class => 'gfx', :alt => 'OpenID'),  "/auth/open_id")
+                %li.auth_provider= link_to(image_tag('auth/open_id_32.png',  :class => 'gfx', :alt => 'OpenID'),  "/auth/open_id")
+                %li.auth_provider= link_to(image_tag('auth/xing_32.png',     :class => 'gfx', :alt => 'XING'),    "/auth/xing")
 
         .span9
           - flash.each do |key, value|

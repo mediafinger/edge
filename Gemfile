@@ -18,6 +18,7 @@ source 'http://rubygems.org'
   gem 'omniauth-openid',    '~> 1.0'
   gem 'omniauth-facebook',  '~> 1.2'
   gem 'omniauth-github',    '~> 1.0'
+  gem 'omniauth-xing',      '~> 0.1'
 
   #  gem 'cancan'
 
