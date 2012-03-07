@@ -15,3 +15,9 @@ Fabricator(:openid, :from => :authentication) do
   provider   'OpenID'
   uid        'www.openid.com'
 end
+
+Fabricator(:authentication_new, :from => :authentication) do
+  user_id    nil
+  provider   'Somebody'
+  uid        "you don't know me"
+end
