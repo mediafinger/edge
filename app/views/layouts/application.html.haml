@@ -14,7 +14,7 @@
       }
     = stylesheet_link_tag "application", :media => "all"
     / Le fav and touch icons
-    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    / %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
@@ -50,12 +50,11 @@
                 %li= link_to image_tag("iconics/link.png", :class => "icon", :alt => t('shared.nav.linked_authentication_services')), authentications_url
               -else
                 %li.nav-header= t('.sign_in')
+                / Sign in with username & password
                 %li= link_to image_tag("iconics/key.png", :class => "icon",  :alt => t('shared.nav.sign_in')), new_user_session_path
-                %li= link_to(image_tag('auth/twitter_32.png',  :class => 'gfx', :alt => 'Twitter'), "/auth/twitter")
-                %li= link_to(image_tag('auth/google_32.png',   :class => 'gfx', :alt => 'Google'),  "/auth/google")
-                %li= link_to(image_tag('auth/open_id_32.png',  :class => 'gfx', :alt => 'OpenID'),  "/auth/open_id")
-                %li= link_to(image_tag('auth/github_32.png',   :class => 'gfx', :alt => 'GitHub'),  "/auth/github")
-                %li= link_to(image_tag('auth/xing_32.png',     :class => 'gfx', :alt => 'XING'),    "/auth/xing")
+                / Sign in using an Oauth provider
+                -['Twitter', 'Google', 'Github', 'Facebook', 'Open_ID', 'XING' ].each do |provider|
+                  %li= link_to(image_tag("auth/#{provider.downcase}_32.png", :class => 'gfx', :alt => "#{provider}"), "/auth/#{provider.downcase}")
 
         .span9
           - flash.each do |key, value|
