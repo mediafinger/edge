@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :authentications
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :authentications, :nickname
 
 
   def apply_omniauth(omniauth)
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   end
 
   def set_twitter_attributes(hash)
-    self.nickname     = hash['info']['nickname']
+    nickname     = hash['info']['nickname']
     #self.name         = hash['info']['name']
     #self.location     = hash['info']['location']
     #self.image        = hash['info']['image']
