@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authentications, :dependent => :destroy
+  has_one :profile, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
