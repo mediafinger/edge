@@ -37,11 +37,20 @@ img {
   height: 3.6em;
 }
 
+.authentications {
+  overflow: auto;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
 .authentication {
-  padding: 0.35em;
+  padding: 0.5em;
+  margin: 1em;
+  max-width: 10em;
+  max-height: 8em;
+  overflow: hidden;
   border: 0.1em dotted;
-  font-size: 0.8em;
-  width: 9em;
+  float: left;
 }
 
 .remove {
@@ -56,8 +65,8 @@ img {
   width: 4.5em;
   height: 4em;
   padding: 0.35em;
+  margin: 0.5em;
   float: left;
-  font-size: 0.8em;
   text-decoration: none;
 }
 
