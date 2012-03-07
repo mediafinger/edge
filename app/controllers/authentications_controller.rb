@@ -6,6 +6,7 @@ class AuthenticationsController < ApplicationController
   # TODO handle case: user logged in, auth known (different user)
   def create
     auth = request.env["omniauth.auth"]
+    auth['uid'] = auth['code'] if auth['provider'] == 'github'
     authentication = Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
     if authentication
       puts 'auth known, user not logged in'                             # auth known, user not logged in
