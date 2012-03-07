@@ -1,0 +1,5 @@
+%h2
+  Your user profile #{@profile.name}
+= simple_form_for(@resource, :html => {:class => 'form-horizontal' }) do |f|
+  = f.label :email
+  = resource.email

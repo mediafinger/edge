@@ -5,6 +5,8 @@ Edge::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
+  resources :profiles
+
   resources :authentications
 
   root :to => 'pages#index'
