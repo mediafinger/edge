@@ -28,13 +28,11 @@ img {
 }
 
 .icon {
-  width: 1.8em;
-  height: 1.8em; /* 24px; */
+  width: 1.8em;   /* 24px; */
 }
 
 .gfx {
   width: 3.6em;   /* 48px; */
-  height: 3.6em;
 }
 
 .authentications {

@@ -30,10 +30,13 @@
             %span.icon-bar
           %a.brand{:href => "#"}Edge
           .container-fluid.nav-collapse
-            %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+            - if user_signed_in?
+              %ul.nav
+                %li= link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"),  edit_user_registration_path
+                %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "profile"),   profile_path(current_user.profile)
+            - else
+              %ul.nav
+                %li= link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"),   new_user_registration_path
 
     .container-fluid
 
@@ -46,6 +49,8 @@
                 %li.nav-header= t('shared.nav.signed_in_as')
                 %li= current_user.email
                 %li= link_to_twitter current_user
+                %li= profile_img current_user
+                %li= link_to_website current_user
                 %li= link_to image_tag("iconics/key.png", :class => "icon", :alt => t('shared.nav.sign_out')), destroy_user_session_path, :method => :delete
                 %li= link_to image_tag("iconics/link.png", :class => "icon", :alt => t('shared.nav.linked_authentication_services')), authentications_url
               -else
@@ -61,11 +66,6 @@
             = content_tag(:div, value, :class => "round flash #{key}")
           = yield
     
-      %footer
-        - if user_signed_in?
-          = link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"), edit_user_registration_path
-        - else
-          = link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"), new_user_registration_path
 
     /
       Le javascript
