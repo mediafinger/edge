@@ -3,6 +3,10 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile if current_user
   end
 
+  def index
+    @profiles = Profile.all
+  end
+
   def show
     @profile = Profile.find_by_id(params[:id])
   end

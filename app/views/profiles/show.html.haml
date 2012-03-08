@@ -1,14 +1,18 @@
+- provider = []
+- @profile.user.authentications.each do |auth|
+  - provider << auth.provider.humanize
+
 %h2
   = "#{t('.profile_of')}: #{@profile.name}"
 
 = simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
-  = f.input :name, :disabled => true
-  = f.input :nickname, :disabled => true
-  = f.input :location, :disabled => true
-  = f.input :profession, :disabled => true
-  = f.input :about, :disabled => true
-  = f.input :website, :disabled => true
-  = f.input :img_url, :disabled => true
+  = f.input :name,        :disabled => true, :hint => @profile.user.email
+  = f.input :nickname,    :disabled => true
+  = f.input :location,    :disabled => true
+  = f.input :profession,  :disabled => true
+  = f.input :about,       :disabled => true
+  = f.input :website,     :disabled => true, :hint => provider.join(', ')
+  = f.input :img_url,     :disabled => true
 
 - if @profile.user == current_user
   = link_to t('.edit_profile'), edit_profile_path
