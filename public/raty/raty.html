@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>jQuery Raty - A Star Rating Plugin</title>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.raty.min.js"></script>
+
+  </head>
+  
+  
+      <div id="big-demo" class="session">Bigger icon:</div>
+      <div id="big"></div>
+
+    <script type="text/javascript">
+      $(function() {
+
+        $('#big').raty({
+          cancel:   false,
+          cancelOff:  'cancel-off-big.png',
+          cancelOn: 'cancel-on-big.png',
+          half:   true,
+          size:   24,
+          starOff:  'star-off-big.png',
+          starOn:   'star-on-big.png',
+          starHalf: 'star-half-big.png'
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-%h2 List of all Users
+%h2 List of all Users without any need to wrap a line
 %ul
   - @profiles.each do |p|
     %li
@@ -6,4 +6,32 @@
         = link_to image_tag("iconics/star.png", :class => "icon", :alt => "your profile"), profile_path(p)
       - else
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
+      
       = link_to p.name, profile_path(p)
+      
+      / Magic Star Rating thing Raty:
+      .big
+
+
+
+/
+  Le javascript
+  \==================================================
+/ Placed at the end of the document so the pages load faster
+= javascript_include_tag "application"
+
+/ This function has to be called AFTER the JS assests have been loaded!!
+%script{:type => "text/javascript", :charset => "utf-8"}
+  $(function() {
+  $('.big').raty({
+  cancel:   false,
+  cancelOff:  'cancel-off-big.png',
+  cancelOn: 'cancel-on-big.png',
+  half:   true,
+  size:   24,
+  starOff:  'star-off-big.png',
+  starOn:   'star-on-big.png',
+  starHalf: 'star-half-big.png'
+  });
+  });
+

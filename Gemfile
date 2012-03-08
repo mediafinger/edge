@@ -25,7 +25,7 @@ source 'http://rubygems.org'
   #  gem 'cancan'
 
   #  gem 'decent_exposure'
-  #  gem draper
+  #  gem 'draper'
 
   #  gem 'rdiscount'
   #  gem 'carrierwave'
@@ -34,9 +34,6 @@ source 'http://rubygems.org'
   #  gem 'active_admin'
   #  gem 'kaminari'
 
-  #  gem 'compass'
-  #  gem 'compass-bootstrap'
-
 
 group :production do
   gem 'pg'          # ,   '~> 0.13'
@@ -44,9 +41,9 @@ end
 
 
 group :assets do
-  gem 'sass-rails',         '~> 3.1'
-  gem 'coffee-rails',       '~> 3.1'
-  gem 'uglifier',           '~> 1.0'
+  gem 'sass-rails',                 '~> 3.1'
+  gem 'coffee-rails',               '~> 3.1'
+  gem 'uglifier',                   '~> 1.0'
   gem 'twitter-bootstrap-rails',    '~> 2.0'
 end
 
