@@ -5,7 +5,8 @@ Edge::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => 'registrations' }
   resources :authentications
-  resources :profiles
+  resources :profiles,          :only => [:index, :show, :edit, :update]
+  resources :profile_ratings
 
   root :to => 'pages#index'
 
