@@ -4,10 +4,8 @@ Edge::Application.routes.draw do
   match 'auth/failure',             :to => 'authentications#index'
 
   devise_for :users, :controllers => { :registrations => 'registrations' }
-
-  resources :profiles
-
   resources :authentications
+  resources :profiles
 
   root :to => 'pages#index'
 

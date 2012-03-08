@@ -24,10 +24,15 @@ ActiveRecord::Schema.define(:version => 20120307222538) do
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
+    t.string   "nickname"
     t.string   "location"
+    t.string   "profession"
+    t.string   "about"
     t.string   "img_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "thumbnail_url"
+    t.string   "website"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -43,11 +48,9 @@ ActiveRecord::Schema.define(:version => 20120307222538) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
-    t.string   "nickname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["nickname"], :name => "index_users_on_nickname", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

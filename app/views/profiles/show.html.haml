@@ -1,5 +1,8 @@
-%h2
-  Your user profile #{@profile.name}
-= simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
-  = f.label :email
-  = @profile.user.email
+- if @profile
+
+  %h2
+    Profile of: #{@profile.name}
+  = simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
+    = f.label :email
+    = @profile.user.email
+
