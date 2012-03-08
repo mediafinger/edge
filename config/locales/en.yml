@@ -11,6 +11,14 @@ en:
       sign_in_options: "You can sign in to this account using:"
       sign_in_through: "Sign in through one of these services:"
 
+  profiles:
+    edit:
+      twitter_name: "Your name on Twitter"
+      your_profile: "Your User Profile"
+    show:
+      edit_profile: "Edit your profile"
+      profile_of: "Profile of"
+
   shared:
     header:
       title: 'the edge'
@@ -28,3 +36,6 @@ en:
   email_needed: "We need your emailaddress to create an account - but you can log in with %{provider} on future visits"
   sign_in_successful: "Signed in successfully."
 
+  # profile controller
+  changes_successful: "Changes have been saved successfully"
+  no_changes_saved: "No changes have been saved"

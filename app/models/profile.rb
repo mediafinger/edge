@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :user_id, :name, :nickname, :location, :img_url, :thumbnail_url, :about, :website
+  attr_accessible :user_id, :name, :nickname, :location, :img_url, :thumbnail_url, :about, :website, :profession
 
   def set_twitter_attributes(hash)
     self.nickname       = hash['nickname']        if nickname.blank?

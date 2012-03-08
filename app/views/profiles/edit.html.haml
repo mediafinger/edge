@@ -1,11 +1,12 @@
-- if @profile
+%h2
+  = t('.your_profile')
 
-  %h2
-    Your user profile #{@profile.name}
-
-  = simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
-    = f.label :email
-    = @profile.user.email
-
-- else
-  You got no profile!
+= simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
+  = f.input :name
+  = f.input :nickname, :hint => t('.twitter_name')
+  = f.input :location
+  = f.input :profession
+  = f.input :about
+  = f.input :website
+  = f.input :img_url
+  = f.submit
