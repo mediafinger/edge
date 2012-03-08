@@ -6,12 +6,11 @@
         = link_to image_tag("iconics/star.png", :class => "icon", :alt => "your profile"), profile_path(p)
       - else
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
-      
+
       / Magic Star Rating thing Raty: 
-      %span.big_star_rating
+      %span.big_star_rating{:profile_id => p.id}
 
       = link_to p.name, profile_path(p)
-
 
 
 
@@ -23,17 +22,24 @@
 = javascript_include_tag "application"
 
 / This function has to be called AFTER the JS assests have been loaded!!
-%script{:type => "text/javascript", :charset => "utf-8"}
-  $(function() {
-  $('.big_star_rating').raty({
-  cancel:   false,
-  cancelOff:  'cancel-off-big.png',
-  cancelOn: 'cancel-on-big.png',
-  half:   true,
-  size:   24,
-  starOff:  'star-off-big.png',
-  starOn:   'star-on-big.png',
-  starHalf: 'star-half-big.png'
-  });
+:javascript
+  var rating_for_profile = $(function(profile_id) {
+    $('.big_star_rating').raty({
+      cancel:       false,
+      half:         false,
+      hintList:     ['I will NOT recommend this', 'I will rather not recommend this', 'It is/was ok', 'I might recommend this', 'I will happily recommend this to friends or co-workers'],
+      size:         24,
+      starOff:      'star-off-big.png',
+      starOn:       'star-on-big.png',
+      starHalf:     'star-half-big.png',
+      start:        3,
+    
+      click: function(score, evt) {
+        // alert('ID: ' + $(this).attr('id') + '\nscore: ' + score + '\nevent: ' + evt + '\nprofile: ' + $(this).attr('profile_id') );
+        return(score, $(this).attr('profile_id') );
+        // $('#lastresult').raty('start', score);
+      }
+
+    });
   });
 
