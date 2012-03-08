@@ -64,7 +64,9 @@
         .span9
           - flash.each do |key, value|
             = content_tag(:div, value, :class => "round flash #{key}")
-          = yield
+          
+          %main
+            = yield
     
 
     /
