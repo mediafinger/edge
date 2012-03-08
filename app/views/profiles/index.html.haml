@@ -1,16 +1,18 @@
-%h2 List of all Users without any need to wrap a line
-%ul
+%h2 List of all Users
+%ul.wide.no_bullets
   - @profiles.each do |p|
-    %li
+    %li.wide
       - if p.user_id == current_user.id
         = link_to image_tag("iconics/star.png", :class => "icon", :alt => "your profile"), profile_path(p)
       - else
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
       
+      / Magic Star Rating thing Raty: 
+      %span.big_star_rating
+
       = link_to p.name, profile_path(p)
-      
-      / Magic Star Rating thing Raty:
-      .big
+
+
 
 
 
@@ -23,7 +25,7 @@
 / This function has to be called AFTER the JS assests have been loaded!!
 %script{:type => "text/javascript", :charset => "utf-8"}
   $(function() {
-  $('.big').raty({
+  $('.big_star_rating').raty({
   cancel:   false,
   cancelOff:  'cancel-off-big.png',
   cancelOn: 'cancel-on-big.png',

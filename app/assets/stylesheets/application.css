@@ -40,6 +40,21 @@ img {
   width: 3.6em;   /* 48px; */
 }
 
+.wide {
+  width: 30em;
+}
+
+.no_bullets {
+ list-style-type: none;
+ padding-top: 0.5em;
+}
+
+.big_star_rating {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+
 .authentications {
   overflow: auto;
   width: 100%;
