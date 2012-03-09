@@ -39,17 +39,20 @@ class AuthenticationsController < ApplicationController
     @authentication.destroy
     redirect_to authentications_url, :notice => t('.destroy_authentication_success')
   end
+  
 
-  def find_existing(auth)
-    auth['uid'] = auth['code'] if auth['provider'] == 'github'              # github, or oauth 2.0 issue ??
-    Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
-  end
+private
 
-  # to stop devise from destroying all sessions, when trying to add OpenId and this appears:
-  # WARNING: Can't verify CSRF token authenticity
-  def handle_unverified_request
-    true
-  end
+    def find_existing(auth)
+      auth['uid'] = auth['code'] if auth['provider'] == 'github'              # github, or oauth 2.0 issue ??
+      Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
+    end
+
+    # to stop devise from destroying all sessions, when trying to add OpenId and this appears:
+    # WARNING: Can't verify CSRF token authenticity
+    def handle_unverified_request
+      true
+    end
 
 end
 
