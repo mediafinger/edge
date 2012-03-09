@@ -33,11 +33,11 @@ img {
 }
 
 .icon {
-  width: 1.8em;   /* 24px; */
+  width: 2.5em;   /* 24px; */
 }
 
 .gfx {
-  width: 3.6em;   /* 48px; */
+  width: 5em;   /* 48px; */
 }
 
 .wide {
@@ -62,7 +62,7 @@ img {
 }
 
 .authentication {
-  padding: 0.5em;
+  padding: 0.3em;
   margin: 1em;
   max-width: 10em;
   max-height: 8em;
@@ -75,7 +75,7 @@ img {
   text-align: right;
   vertical-align: top;
   padding: 0.25em;
-  padding-left: 0.35em;
+  padding-left: 0.25em;
   float: right;
 }
 
@@ -93,3 +93,25 @@ img {
   -webkit-border-radius:  1em;
   border-radius:          1em;
 }
+
+.icon-bulb {
+  background-image: url(iconics/lightbulb_20x.png);
+  background-repeat: no-repeat;
+  display: block;
+  min-width: 3em;
+  min-height: 2.7em;
+}
+
+.icon-home {
+  background-image: url(iconics/home.png);
+  background-repeat: no-repeat;
+  display: block;
+  min-width: 3em;
+  min-height: 2.7em;
+}
+
+.icon-spacer {
+  padding-left: 3em;
+  vertical-align: middle;
+}
+
