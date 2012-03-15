@@ -7,12 +7,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand{:href => "#"}Edge
+      %a.brand{:href => root_path}Edge
       .container-fluid.nav-collapse
+       
         - if user_signed_in?
           %ul.nav
-            %li= link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"),  edit_user_registration_path
-            %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "profile"),   profiles_path
+            %li= link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"), edit_user_registration_path
+            %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "profile"),  profiles_path
+
         - else
           %ul.nav
-            %li= link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"),   new_user_registration_path
+            %li= link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"),  new_user_registration_path

@@ -33,11 +33,12 @@ img {
 }
 
 .icon {
-  width: 2.5em;   /* 24px; */
+  height: 2.5em;   /* 32px; */
+  width:  2.5em;
 }
 
 .gfx {
-  width: 5em;   /* 48px; */
+  width: 3.7em;   /* 48px; */
 }
 
 .wide {
@@ -110,8 +111,16 @@ img {
   min-height: 2.7em;
 }
 
+.icon-user {
+  background-image: url(iconics/user_24x.png);
+  background-repeat: no-repeat;
+  display: block;
+  min-width: 2.5em;
+  min-height: 2.5em;
+  padding: 2em;
+}
+
 .icon-spacer {
   padding-left: 3em;
-  vertical-align: middle;
 }
 

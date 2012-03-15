@@ -1,10 +1,10 @@
 / ### Begin of partial shared/_sidebar.html.haml ###
 
 .well.sidebar-nav
-  %ul.nav.nav-list
 
-    - if user_signed_in?
-      %a.icon-home.icon-spacer(title='take me home'){:href => root_path} Home
+  - if user_signed_in?
+    %ul.nav.nav-list
+      %a.icon-home.icon-spacer(title='take me home'){:href => root_path}
       %li.nav-header= t('shared.nav.signed_in_as')
       %li= link_to current_user.email, profile_path(current_user.profile)
       %li= link_to_twitter current_user
@@ -13,7 +13,8 @@
       %li= link_to image_tag("iconics/key.png", :class => "icon", :alt => t('shared.nav.sign_out')), destroy_user_session_path, :method => :delete
       %li= link_to image_tag("iconics/link.png", :class => "icon", :alt => t('shared.nav.linked_authentication_services')), authentications_url
 
-    -else
+  -else
+    %ul.nav.nav-list
       %li.nav-header= t('.sign_in')
       / Sign in with username & password
       %li= link_to image_tag("iconics/key.png", :class => "icon",  :alt => t('shared.nav.sign_in')), new_user_session_path
