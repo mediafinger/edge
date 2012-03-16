@@ -44,6 +44,9 @@ GEM
     coffee-script-source (1.2.0)
     commonjs (0.2.0)
       therubyracer (~> 0.9.9)
+    copycopter_client (2.0.0)
+      i18n (>= 0.5.0)
+      json
     daemons (1.1.8)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -226,6 +229,7 @@ DEPENDENCIES
   annotate (~> 2.4)
   awesome_print (~> 1.0)
   coffee-rails (~> 3.1)
+  copycopter_client (~> 2.0)
   devise (~> 2.0)
   execjs (~> 1.2)
   fabrication (~> 1.3)

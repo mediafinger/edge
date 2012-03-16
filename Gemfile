@@ -21,6 +21,7 @@ source 'http://rubygems.org'
   gem 'omniauth-xing',      '~> 0.1'
 
   gem 'simple_form',        '~> 2.0'
+  gem 'copycopter_client',  '~> 2.0'
 
   #  gem 'cancan'
 
