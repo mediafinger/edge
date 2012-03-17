@@ -1,4 +1,5 @@
 Edge::Application.routes.draw do
+  root :to => 'pages#index'
 
   match '/auth/:provider/callback', :to => 'authentications#create'
   match 'auth/failure',             :to => 'authentications#index'
@@ -7,9 +8,7 @@ Edge::Application.routes.draw do
   resources :authentications,   :only => [:index, :create, :destroy]
   resources :profiles,          :only => [:index, :show, :edit, :update]
   resources :profile_ratings
-
-  root :to => 'pages#index'
-
+end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -55,12 +54,11 @@ Edge::Application.routes.draw do
   #     resources :products
   #   end
 
-end
-
 
 #== Route Map
 # Generated on 03 Mar 2012 17:54
 
+#                     root        /                                   pages#index
 #                                 /auth/:provider/callback(.:format)  authentications#create
 #             auth_failure        /auth/failure(.:format)             authentications#index
 #         new_user_session GET    /users/sign_in(.:format)            devise/sessions#new
@@ -78,10 +76,16 @@ end
 #                          DELETE /users(.:format)                    registrations#destroy
 #          authentications GET    /authentications(.:format)          authentications#index
 #                          POST   /authentications(.:format)          authentications#create
-#       new_authentication GET    /authentications/new(.:format)      authentications#new
-#      edit_authentication GET    /authentications/:id/edit(.:format) authentications#edit
-#           authentication GET    /authentications/:id(.:format)      authentications#show
-#                          PUT    /authentications/:id(.:format)      authentications#update
-#                          DELETE /authentications/:id(.:format)      authentications#destroy
-#                     root        /                                   pages#index
-
+#           authentication DELETE /authentications/:id(.:format)      authentications#destroy
+#                 profiles GET    /profiles(.:format)                 profiles#index
+#             edit_profile GET    /profiles/:id/edit(.:format)        profiles#edit
+#                  profile GET    /profiles/:id(.:format)             profiles#show
+#                          PUT    /profiles/:id(.:format)             profiles#update
+#          profile_ratings GET    /profile_ratings(.:format)          profile_ratings#index
+#                          POST   /profile_ratings(.:format)          profile_ratings#create
+#       new_profile_rating GET    /profile_ratings/new(.:format)      profile_ratings#new
+#      edit_profile_rating GET    /profile_ratings/:id/edit(.:format) profile_ratings#edit
+#           profile_rating GET    /profile_ratings/:id(.:format)      profile_ratings#show
+#                          PUT    /profile_ratings/:id(.:format)      profile_ratings#update
+#                          DELETE /profile_ratings/:id(.:format)      profile_ratings#destroy
+                         
