@@ -5,6 +5,8 @@
   - if user_signed_in?
     %ul.nav.nav-list
       %a.icon-home.icon-spacer(title='take me home'){:href => root_path}
+      %br
+      %a.icon-bulb.icon-spacer(title='take me home'){:href => root_path}
       %li.nav-header= t('shared.nav.signed_in_as')
       %li= link_to current_user.email, profile_path(current_user.profile)
       %li= link_to_twitter current_user
