@@ -8,9 +8,12 @@
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
 
       / Magic Star Rating thing Raty:
-      - avg_rating = p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0
-      %span.big_star_rating{ :profile_id => p.id, :avg_rating => avg_rating }
-      = puts avg_rating
+      - avg_rating = p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0      
+      %span.big_star_rating{ :profile_id => p.id, :avg_rating => avg_rating }= |
+        button_to 'rate!', { :controller => 'profile_ratings', :action => 'create', :profile_id => p.id, :profile_rating => { :rating => 1 } }, |
+         :title=>'Create', |
+         :class=>'action', |
+         :onclick=>"alert('Profile: #{p.id} - User: #{current_user.id} - Rating: #{avg_rating}'); return false;" |
 
       = link_to p.name, profile_path(p)
 
@@ -29,16 +32,20 @@
     $('.big_star_rating').raty({
       cancel:       false,
       half:         false,
-      hintList:     ['I will NOT recommend this', 'I will rather not recommend this', 'It is/was ok', 'I might recommend this', 'I will happily recommend this to friends or co-workers'],
+      hintList:     ['I will NOT recommend', 'I am unlikely to recommend', 'OK', 'I might recommend', 'I will happily recommend to others'],
       size:         24,
       starOff:      'star-off-big.png',
       starOn:       'star-on-big.png',
       starHalf:     'star-half-big.png',
-      start:        avg_rating,
+      start:        function() {
+                      return $(this).attr('avg_rating');
+                    },
     
       click: function(score, evt) {
-        // alert('ID: ' + $(this).attr('id') + '\nscore: ' + score + '\nevent: ' + evt + '\nprofile: ' + $(this).attr('profile_id') );
-        return(score, $(this).attr('profile_id') );
+        // alert('score: ' + score + '\nevent: ' + evt + '\nID: ' + $(this).attr('id') + 
+        //         '\nprofile: ' + $(this).attr('profile_id')  + '\navg_rating: ' + $(this).attr('avg_rating') );
+        return(score); 
+          // , $(this).attr('profile_id') );
         // $('#lastresult').raty('start', score);
       }
 
