@@ -1,0 +1,5 @@
+%h2 Create new rating
+
+= simple_form_for(@profile_rating, :html => {:class => 'form-horizontal' }) do |f|
+  = f.input :rating, :collection => 1..5
+  = f.submit

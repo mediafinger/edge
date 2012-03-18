@@ -1,14 +1,21 @@
 class ProfileRatingsController < ApplicationController
-  def create
-
-  end
 
   def new
-
+    @profile_rating = ProfileRating.new
   end
 
-  def edit
-    @profile_rating = ProfileRating.find_by_id(params[:id])
+  def create
+    attributes = params[:profile_rating].merge( { :user_id => current_user.id, :profile_id => params[:profile_id] } )
+
+    @profile_rating = ProfileRating.new(attributes)
+
+    if @profile_rating.save!
+      flash[:notice] = t('.save_succesful')
+      redirect_to profile_rating_path(@profile_rating.profile_id, @profile_rating.id)
+    else
+      flash.now[:error] = t('.could_not_save')
+      render :action => :new
+    end
   end
 
   def index
@@ -17,10 +24,22 @@ class ProfileRatingsController < ApplicationController
 
   def show
     @profile_rating = ProfileRating.find_by_id(params[:id])
+    @profile = Profile.find_by_id(params[:profile_id])
+    @user = User.find_by_id(@profile_rating.user_id)
+  end
+  
+  def edit
+    @profile_rating = ProfileRating.find_by_id(params[:profile_rating])
   end
 
   def update
-    @profile_rating = ProfileRating.find_by_id(params[:id])
+    @profile_rating = ProfileRating.find_by_id(params[:profile_rating])
+    if @profile_rating.update_attributes(params[:profile_rating])
+      flash[:notice] = t('.save_succesful')
+      redirect_to :action => :show, :id => @profile_rating
+    else
+       flash.now[:error] = t('.could_not_save')
+       render :action => 'edit'
+    end
   end
-
 end

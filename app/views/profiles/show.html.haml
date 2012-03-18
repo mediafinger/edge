@@ -14,5 +14,12 @@
   = f.input :website,     :disabled => true, :hint => provider.join(', ')
   = f.input :img_url,     :disabled => true
 
+
+- avg_rating = @profile.profile_ratings.average('rating') ? @profile.profile_ratings.average('rating').round : 0
+- avg_rating.times do
+  = image_tag("iconics/star.png", :class => "icon")
+
+= link_to t('.rate_profile'), new_profile_rating_path(@profile.id)
+
 - if @profile.user == current_user
   = link_to t('.edit_profile'), edit_profile_path

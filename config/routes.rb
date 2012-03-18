@@ -1,13 +1,15 @@
 Edge::Application.routes.draw do
   root :to => 'pages#index'
 
-  match '/auth/:provider/callback', :to => 'authentications#create'
-  match 'auth/failure',             :to => 'authentications#index'
+  devise_for :users,            :controllers  => { :registrations => 'registrations' }
 
-  devise_for :users, :controllers => { :registrations => 'registrations' }
-  resources :authentications,   :only => [:index, :create, :destroy]
-  resources :profiles,          :only => [:index, :show, :edit, :update]
-  resources :profile_ratings
+  match '/auth/:provider/callback', :to   => 'authentications#create'
+  match 'auth/failure',             :to   => 'authentications#index'
+  resources :authentications,       :only => [:index, :create, :destroy]
+  
+  resources :profiles, :only => [:index, :show, :edit, :update] do
+    resources :profile_ratings, :as => :ratings,  :except       => [:destroy]
+  end
 end
 
   # Sample of regular route:
