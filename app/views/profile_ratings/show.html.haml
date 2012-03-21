@@ -1,10 +1,9 @@
 %h2= "Profile Rating of #{@profile.name}"
 
-- @profile_rating.rating.times do
-  = image_tag("iconics/star.png", :class => "icon")
-
-%div= @profile_rating.inspect
-%div= @profile.inspect
-%div= @user.inspect
-
+%span.big_star_read_only{ :avg_rating => @profile_rating.rating }
 = link_to 'Edit', edit_profile_rating_path
+
+%ul
+  %li= @profile_rating.inspect
+  %li= @profile.inspect
+  %li= @user.inspect
