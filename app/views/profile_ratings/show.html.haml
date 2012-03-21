@@ -1,5 +1,10 @@
-%h2 Profile Rating of ...
+%h2= "Profile Rating of #{@profile.name}"
+
+- @profile_rating.rating.times do
+  = image_tag("iconics/star.png", :class => "icon")
 
 %div= @profile_rating.inspect
 %div= @profile.inspect
 %div= @user.inspect
+
+= link_to 'Edit', edit_profile_rating_path

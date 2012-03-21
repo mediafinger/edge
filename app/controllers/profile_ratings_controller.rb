@@ -5,11 +5,10 @@ class ProfileRatingsController < ApplicationController
   end
 
   def create
-    attributes = params[:profile_rating].merge( { :user_id => current_user.id, :profile_id => params[:profile_id] } )
-
+    attributes = { :user_id => current_user.id, :profile_id => params[:profile_id], :rating => params[:score] }
     @profile_rating = ProfileRating.new(attributes)
 
-    if @profile_rating.save!
+    if @profile_rating.save
       flash[:notice] = t('.save_succesful')
       redirect_to profile_rating_path(@profile_rating.profile_id, @profile_rating.id)
     else
@@ -29,12 +28,12 @@ class ProfileRatingsController < ApplicationController
   end
   
   def edit
-    @profile_rating = ProfileRating.find_by_id(params[:profile_rating])
+    @profile_rating = ProfileRating.find_by_id(params[:id])
   end
 
   def update
-    @profile_rating = ProfileRating.find_by_id(params[:profile_rating])
-    if @profile_rating.update_attributes(params[:profile_rating])
+    @profile_rating = ProfileRating.find_by_id(params[:id])
+    if @profile_rating.update_attributes(:rating => params[:score])
       flash[:notice] = t('.save_succesful')
       redirect_to :action => :show, :id => @profile_rating
     else
