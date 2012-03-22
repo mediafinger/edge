@@ -32,11 +32,11 @@ class ProfileRatingsController < ApplicationController
   end
 
   def update
-    @profile_rating = ProfileRating.find_by_id(params[:id])
-    
+    @profile_rating = ProfileRating.find_by_user_id_and_profile_id(current_user.id, params[:profile_id]) || 
+      ProfileRating.create(:user_id => current_user.id, :profile_id => params[:profile_id], :rating => 0)
+
     if @profile_rating.update_attributes(:rating => params[:score])
       respond_to do |format|
-    
         format.js do
           flash.now[:notice] = t('.save_succesful')
           render :nothing => true

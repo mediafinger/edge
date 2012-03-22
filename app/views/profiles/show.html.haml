@@ -14,8 +14,16 @@
   = f.input :website,     :disabled => true, :hint => provider.join(', ')
   = f.input :img_url,     :disabled => true
 
-- avg_rating = @profile.profile_ratings.average('rating') ? @profile.profile_ratings.average('rating').round : 0
+- avg_rating =  @profile.profile_ratings.average('rating') ? @profile.profile_ratings.average('rating').round : 0
+- user_rating = @profile.profile_ratings.find_by_user_id(current_user).rating || 0
+
+%h2= "avg_rating of " + @profile.name 
 %span.big_star_read_only{ :avg_rating => avg_rating }
+
+%h2= "your_rating of " + @profile.name 
+%span.big_star_rating_direct{ :profile_id => @profile.id, :avg_rating => user_rating }
+
+
 = link_to t('.rate_profile'), new_profile_rating_path(@profile.id)
 
 - if @profile.user == current_user
