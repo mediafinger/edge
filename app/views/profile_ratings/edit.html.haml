@@ -3,7 +3,4 @@
 
 %h2= "avg_rating of " + p.name 
 
-- profile_id = params[:profile_id]
-= form_for(@profile_rating, :url => "/profiles/#{profile_id}/profile_ratings/#{@profile_rating.id}", :profile_id => profile_id, :html => {:method => :put} ) do |f|
-  %span.big_star_rating{ :profile_id => profile_id, :avg_rating => avg_rating }
-  = f.submit
+%span.big_star_rating_direct{ :profile_id => params[:profile_id], :pr_id => @profile_rating.id, :avg_rating => avg_rating }

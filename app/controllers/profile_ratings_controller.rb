@@ -33,12 +33,25 @@ class ProfileRatingsController < ApplicationController
 
   def update
     @profile_rating = ProfileRating.find_by_id(params[:id])
+    
     if @profile_rating.update_attributes(:rating => params[:score])
-      flash[:notice] = t('.save_succesful')
-      redirect_to :action => :show, :id => @profile_rating
+      respond_to do |format|
+    
+        format.js do
+          flash.now[:notice] = t('.save_succesful')
+          render :nothing => true
+        end
+    
+        format.html do
+          raise params.inspect
+          flash[:notice] = t('.save_succesful')
+          redirect_to :action => :show, :id => @profile_rating
+        end
+      end
+    
     else
-       flash.now[:error] = t('.could_not_save')
-       render :action => 'edit'
+      flash.now[:error] = t('.could_not_save')
+      render :action => 'edit'
     end
   end
 end
