@@ -1,22 +1,5 @@
 class ProfileRatingsController < ApplicationController
 
-  def new
-    @profile_rating = ProfileRating.new
-  end
-
-  def create
-    attributes = { :user_id => current_user.id, :profile_id => params[:profile_id], :rating => params[:score] }
-    @profile_rating = ProfileRating.new(attributes)
-
-    if @profile_rating.save
-      flash[:notice] = t('.save_succesful')
-      redirect_to profile_rating_path(@profile_rating.profile_id, @profile_rating.id)
-    else
-      flash.now[:error] = t('.could_not_save')
-      render :action => :new
-    end
-  end
-
   def index
     @profile_ratings = ProfileRating.all
   end

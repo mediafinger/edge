@@ -8,7 +8,7 @@ Edge::Application.routes.draw do
   resources :authentications,       :only => [:index, :create, :destroy]
   
   resources :profiles, :only => [:index, :show, :edit, :update] do
-    resources :profile_ratings, :as => :ratings,  :except => [:destroy]
+    resources :profile_ratings, :as => :ratings,  :only => [:index, :show, :edit, :update]
   end
 end
 
