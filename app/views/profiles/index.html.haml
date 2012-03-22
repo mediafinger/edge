@@ -8,10 +8,10 @@
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
 
       / Magic Star Rating thing Raty:
-      - avg_rating = p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0
+      - avg_rating =  p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0
+      - user_rating = p.profile_ratings.find_by_user_id(current_user).rating || 0
 
-      = form_for(p.profile_ratings, :url => "/profiles/#{p.id}/profile_ratings", :profile_id => p.id, :html => {:method => :post} ) do |f|
-        %span.big_star_rating{ :profile_id => p.id, :avg_rating => avg_rating }
-        = f.submit
+      %span.big_star_read_only{ :avg_rating => avg_rating } avg_rating:
+      %span.big_star_rating_direct{ :profile_id => p.id, :avg_rating => user_rating } your rating:
          
       = link_to p.name, profile_path(p)
