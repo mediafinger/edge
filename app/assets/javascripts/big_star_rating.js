@@ -39,8 +39,12 @@ var rating_for_profile = $(function(profile_id, avg_rating) {
 
     click: function(score, evt) {
       $.ajax({
-        url: "/profiles/" + $(this).attr('profile_id') + "/profile_ratings/" + $(this).attr('pr_id') + '.js',
+        url: "/profiles/" + $(this).attr('profile_id') + "/profile_ratings/" + '0' + '.js',
         type: 'put',
+        headers: {
+          'X-Transaction': 'PUT Stars',
+          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
         data: {'score':score}
       });
     }
