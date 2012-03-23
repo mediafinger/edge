@@ -48,6 +48,7 @@ group :assets do
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
   gem 'twitter-bootstrap-rails',    '~> 2.0'
+  gem 'less-rails-fontawesome'
 end
 
 
