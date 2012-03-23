@@ -1,4 +1,7 @@
 %h2 List of all Users
+- toggle_text = @avg_rating_true ? "Average Ratings (click to toggle)" : "Your Ratings (click to toggle)"
+= link_to toggle_text, profiles_path(:avg_rating_true => !@avg_rating_true)
+
 %ul.wide.no_bullets
   - @profiles.each do |p|
     %li.wide
@@ -8,10 +11,11 @@
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
 
       / Magic Star Rating thing Raty:
-      - avg_rating =  p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0
-      - user_rating = p.profile_ratings.find_by_user_id(current_user).rating || 0
-
-      %span.big_star_read_only{ :avg_rating => avg_rating } avg_rating:
-      %span.big_star_rating_direct{ :profile_id => p.id, :avg_rating => user_rating } your rating:
+      - if @avg_rating_true
+        - rating = p.profile_ratings.average('rating') || 0
+        %span.big_star_read_only{ :avg_rating => rating }
+      - else
+        - rating = p.profile_ratings.find_by_user_id(current_user) ? p.profile_ratings.find_by_user_id(current_user).rating : 0
+        %span.big_star_rating_direct{ :profile_id => p.id, :avg_rating => rating }
          
       = link_to p.name, profile_path(p)

@@ -42,7 +42,7 @@ img {
 }
 
 .wide {
-  width: 50em;
+  width: 52em;
 }
 
 .no_bullets {
@@ -54,7 +54,15 @@ img {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
-
+.big_star_rating_direct {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.big_star_read_only {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-color: rgb(222,222,222);
+}
 
 .authentications {
   overflow: auto;

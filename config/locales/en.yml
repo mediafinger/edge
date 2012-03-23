@@ -18,7 +18,9 @@ en:
     show:
       edit_profile: "Edit your profile"
       profile_of: "Profile of"
-
+    avg_rating: Average Rating
+    your_rating: Your Rating
+    
   shared:
     header:
       title: 'the edge'

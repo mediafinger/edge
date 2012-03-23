@@ -5,6 +5,11 @@ class ProfilesController < ApplicationController
 
   def index
     @profiles = Profile.all
+    if params[:avg_rating_true] && params[:avg_rating_true] == "true"
+      @avg_rating_true = true
+    else
+      @avg_rating_true = false
+    end
   end
 
   def show
