@@ -5,19 +5,22 @@ class PagesController < ApplicationController
   end
 
   def events
-    @events = Edge::Events.events
+    @events = Edge::Events.find_all
   end
 
   def events_in
-    @events_in = Edge::Events.get_events_in(params[:country], params[:year])
+    @events = Edge::Events.find_by_city(params[:city])
+    render :events
   end
 
-  def local_events
-    @local_events = Edge::Events.get_local_events(params[:city])
+  def events_of
+    @events = Edge::Events.find_by_country_and_year(params[:country], params[:year])
+    render :events
   end
 
   def events_for
-    @events_for = Edge::Events.get_events_local()    # Fachpublikum ...
+    @events = Edge::Events.find_by_audience()    # Fachpublikum ...
+    render :events
   end
 
 end

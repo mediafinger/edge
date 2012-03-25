@@ -2,20 +2,20 @@ module Edge
   class Events
     include HTTParty
 
-    def self.events
+    def self.find_all
       get("/events.json").parsed_response
     end
 
-    def self.events_in(country, year)
+    def self.find_by_country_and_year(country, year)
       result = get("/events.json?country=#{country}&year=#{year}")
       HashWithIndifferentAccess.new(result.present? ? result["event"] : nil)
     end
 
-    def self.local_events(city)
+    def self.find_by_city(city)
       get("/events.json?city=#{city}").parsed_response
     end
 
-    def self.create_event(attributes)
+    def self.create(attributes)
       attributes = {
         :user_id => current_user.id
       }.merge(attributes)
@@ -23,7 +23,7 @@ module Edge
       post('/events', :body => { :event => attributes })
     end
 
-    def self.events_for(attributes)
+    def self.find_by_audience(attributes)
       attributes = {
         :audience => 'Fachpublikum',
       }.merge(attributes)
