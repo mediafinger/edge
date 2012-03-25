@@ -1,9 +1,14 @@
 %h2 Events
 
+= params.inspect
+
+%ul
+  %li= link_to "Show me all events", events_path
+  %li= link_to "Show me all events in Germany", events_in_path(:city => 'Hamburg')
+  %li= link_to "Show me only events in Hamburg", events_in_path(:city => 'Hamburg')
+
 - @events.each do |event|
   %br
-  - event.each_pair do |key, value|
-    %span.event-key= "#{key.humanize}:"
-    %span.event-value= "#{value}"
-    %br.higher
+  - @event = event
+  = render 'event'
   %hr.short

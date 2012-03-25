@@ -15,6 +15,10 @@ module Edge
       get("/events.json?city=#{city}").parsed_response
     end
 
+    def self.find_by_country(country)
+      get("/events.json?country=#{country}").parsed_response
+    end
+
     def self.create(attributes)
       attributes = {
         :user_id => current_user.id

@@ -9,7 +9,11 @@ class PagesController < ApplicationController
   end
 
   def events_in
-    @events = Edge::Events.find_by_city(params[:city])
+    if params[:city]
+      @events = Edge::Events.find_by_city(params[:city])
+    elsif params[:country]
+      @events = Edge::Events.find_by_country(params[:country])
+    end
     render :events
   end
 
