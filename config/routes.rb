@@ -2,7 +2,7 @@ Edge::Application.routes.draw do
   root :to => 'pages#index'
 
   match '/events',    :to => 'pages#events'
-  match '/events_in', :to => 'pages#local_events'
+  match '/events_in', :to => 'pages#events_in'
   
   devise_for :users,            :controllers  => { :registrations => 'registrations' }
 
