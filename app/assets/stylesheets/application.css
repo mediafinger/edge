@@ -132,12 +132,28 @@ img {
   padding-left: 3em;
 }
 
+.vertical-spacer {
+  padding-top: 1.7em;
+  padding-bottom: 1.7em;
+}
+
 .higher {
   line-height: 2em;
 }
 
 .short {
   max-width: 30%;
+}
+
+.lefty {
+  float: left;
+  width: 12em;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+.righty {
+  float: left;
 }
 
 .event-key {
@@ -149,4 +165,16 @@ img {
 
 .event-value {
   float: left;
+}
+
+.footer {
+  clear: both;
+  padding-top: 6em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+.footer-link {
+  float: left;
+  padding-left: 5em;
 }

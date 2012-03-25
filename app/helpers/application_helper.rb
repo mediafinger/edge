@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def link_to_twitter(user)
-    if user.profile.nickname
+    unless user.profile.nickname.blank?
       link_to "@#{user.profile.nickname}", "https://twitter.com/#!/#{user.profile.nickname}"
     else
       ""
@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def link_to_website(user)
-    if user.profile.website
+    unless user.profile.website.blank?
       link_to "--> #{user.profile.website}", user.profile.website
     else
       ""
