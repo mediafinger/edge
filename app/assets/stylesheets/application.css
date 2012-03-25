@@ -132,3 +132,21 @@ img {
   padding-left: 3em;
 }
 
+.higher {
+  line-height: 2em;
+}
+
+.short {
+  max-width: 30%;
+}
+
+.event-key {
+  float: left;
+  width: 7em;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+.event-value {
+  float: left;
+}
