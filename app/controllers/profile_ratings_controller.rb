@@ -15,6 +15,11 @@ class ProfileRatingsController < ApplicationController
   end
 
   def update
+    if params[:profile_id] == current_user.profile.id
+      flash.now[:error] = t('.can_not_rate_yourself')
+      render :action => 'show'
+    end
+    
     @profile_rating = ProfileRating.find_by_user_id_and_profile_id(current_user.id, params[:profile_id]) || 
       ProfileRating.create(:user_id => current_user.id, :profile_id => params[:profile_id], :rating => 0)
 

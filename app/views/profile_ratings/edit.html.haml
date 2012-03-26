@@ -1,5 +1,8 @@
 - p = @profile_rating.profile
 - avg_rating = p.profile_ratings.average('rating') ? p.profile_ratings.average('rating').round : 0      
 
-%h2= "avg_rating of " + p.name 
-%span.big_star_rating_direct{ :profile_id => params[:profile_id], :avg_rating => avg_rating }
+%h2= "avg_rating of " + p.name
+- if params[:profile_id] != current_user.profile.id
+  %span.big_star_rating_direct{ :profile_id => params[:profile_id], :avg_rating => avg_rating }
+- else
+  %span.big_star_read_only{ :avg_rating => avg_rating }

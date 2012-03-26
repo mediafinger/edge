@@ -6,16 +6,22 @@
   - @profiles.each do |p|
     %li.wide
       - if p.user_id == current_user.id
-        = link_to image_tag("iconics/star.png", :class => "icon", :alt => "your profile"), profile_path(p)
+        = link_to image_tag("iconics/settings.png", :class => "icon", :alt => "your profile"), profile_path(p)
+        / Magic Star Rating thing Raty:
+        - if @avg_rating_true
+          - rating = p.profile_ratings.average('rating') || 0
+          %span.big_star_read_only{ :avg_rating => rating }
+        - else
+          %span.big_star_read_only{ :avg_rating => rating }
+
       - else
         = link_to image_tag("iconics/magnify.png", :class => "icon", :alt => "view details"), profile_path(p)
-
-      / Magic Star Rating thing Raty:
-      - if @avg_rating_true
-        - rating = p.profile_ratings.average('rating') || 0
-        %span.big_star_read_only{ :avg_rating => rating }
-      - else
-        - rating = p.profile_ratings.find_by_user_id(current_user) ? p.profile_ratings.find_by_user_id(current_user).rating : 0
-        %span.big_star_rating_direct{ :profile_id => p.id, :avg_rating => rating }
-         
+        / Magic Star Rating thing Raty:
+        - if @avg_rating_true
+          - rating = p.profile_ratings.average('rating') || 0
+          %span.big_star_read_only{ :avg_rating => rating }
+        - else
+          - rating = p.profile_ratings.find_by_user_id(current_user) ? p.profile_ratings.find_by_user_id(current_user).rating : 0
+          %span.big_star_rating_direct{ :profile_id => p.id, :avg_rating => rating }
+           
       = link_to p.name, profile_path(p)
