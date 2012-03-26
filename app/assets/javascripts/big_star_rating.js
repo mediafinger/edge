@@ -51,6 +51,33 @@ var rating_for_profile = $(function(profile_id, avg_rating) {
   });
 });
 
+$(function(event_id, avg_rating) {
+  $('.big_star_rating_event').raty({
+    cancel:       false,
+    half:         false,
+    hintList:     ['I will NOT recommend', 'I am unlikely to recommend', 'OK', 'I might recommend', 'I will happily recommend to others'],
+    size:         24,
+    starOff:      'star-off-big.png',
+    starOn:       'star-on-big.png',
+    starHalf:     'star-half-big.png',
+    start:        function() {
+                    return $(this).attr('avg_rating');
+                  },
+
+    click: function(score, evt) {
+      $.ajax({
+        url: "/events/" + $(this).attr('event_id') + "/ratings/" + '0' + '.js',
+        type: 'put',
+        headers: {
+          'X-Transaction': 'PUT Stars',
+          'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {'score':score}
+      });
+    }
+  });
+});
+
 $('.big_star_read_only').raty({
   cancel:       false,
   halfShow:     true,

@@ -6,6 +6,18 @@ module Edge
       get("/events.json").parsed_response
     end
 
+    # Call Events with list of IDs and return list of events
+    #
+    # def self.find_all_by_id(params[:id_list])
+    #   params[:id_list].each do |id|
+    #     get("/events.json/#{id}.json").parsed_response
+    #   end
+    # end
+
+    # def get_events_from_ids(*rating_list)
+    #   Event.find_all_by_id(rating_list.flatten, :select => 'event_id').map(&:id)
+    # end
+
     def self.find(id)
       get("/events/#{id}.json").parsed_response
     end
