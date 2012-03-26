@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120308152805) do
+ActiveRecord::Schema.define(:version => 20120326213246) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20120308152805) do
   end
 
   add_index "profile_ratings", ["profile_id"], :name => "index_profile_ratings_on_profile_id"
+  add_index "profile_ratings", ["user_id", "profile_id"], :name => "index_profile_ratings_on_user_id_and_profile_id"
   add_index "profile_ratings", ["user_id"], :name => "index_profile_ratings_on_user_id"
 
   create_table "profiles", :force => true do |t|
@@ -49,6 +50,18 @@ ActiveRecord::Schema.define(:version => 20120308152805) do
   add_index "profiles", ["location"], :name => "index_profiles_on_location"
   add_index "profiles", ["name"], :name => "index_profiles_on_name"
   add_index "profiles", ["nickname"], :name => "index_profiles_on_nickname"
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "rating"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "ratings", ["event_id"], :name => "index_ratings_on_event_id"
+  add_index "ratings", ["user_id", "event_id"], :name => "index_ratings_on_user_id_and_event_id"
+  add_index "ratings", ["user_id"], :name => "index_ratings_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

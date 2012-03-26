@@ -13,7 +13,9 @@ Edge::Application.routes.draw do
     resources :profile_ratings, :as => :ratings,  :only => [:index, :show, :edit, :update]
   end
   
-  resources :events, :only => [:index, :show]
+  resources :events,    :only => [:index, :show] do
+    resources :ratings, :only => [:index, :show, :edit, :update]
+  end
   match "/events_in",  :to => 'events#events_in',   :via => :get
 end
 
