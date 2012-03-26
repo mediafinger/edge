@@ -27,4 +27,7 @@ class PagesController < ApplicationController
     render :events
   end
 
+  def broadcast
+  end
+
 end

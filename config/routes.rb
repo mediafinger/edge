@@ -1,5 +1,7 @@
 Edge::Application.routes.draw do
-  root :to => 'pages#index'
+  root                :to => 'pages#index'           #TODO show Login session#new
+  match '/home',      :to => 'pages#index'
+  match '/be_social', :to => 'pages#broadcast'
 
   match '/events',    :to => 'pages#events'
   match '/events_in', :to => 'pages#events_in'
