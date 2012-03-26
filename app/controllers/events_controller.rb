@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Edge::Event.find_by_id(params[:id])
+    @event = Edge::Events.find(params[:id])
   end
 
   def events_in

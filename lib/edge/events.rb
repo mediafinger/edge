@@ -6,6 +6,10 @@ module Edge
       get("/events.json").parsed_response
     end
 
+    def self.find(id)
+      get("/events/#{id}.json").parsed_response
+    end
+
     def self.find_by_country_and_year(country, year)
       result = get("/events.json?country=#{country}&year=#{year}")
       HashWithIndifferentAccess.new(result.present? ? result["event"] : nil)

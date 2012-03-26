@@ -2,18 +2,3 @@
 
 %div= "My latest rated events and some new events (17)"
 %div= "Some not so randomly chosen users (19)"
-
-/ = form_for(@user, :as => :user, :url => session_path(:user)) do |f|
-/   = f.label :email
-/   = f.email_field :email
-
-/   = f.label :password
-/   = f.password_field :password
-
-/   - if devise_mapping.rememberable?
-/     = f.check_box :remember_me
-/     = f.label :remember_me
-
-/   = f.submit "Sign in"
-
-/ = render :partial => "devise/shared/links"
