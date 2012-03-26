@@ -21,6 +21,8 @@ source 'http://rubygems.org'
   gem 'omniauth-xing',      '~> 0.1'
 
   gem 'simple_form',        '~> 2.0'
+  gem 'httparty',           '~> 0.8'
+
   gem 'copycopter_client',  '~> 2.0'
 
   #  gem 'cancan'
@@ -46,6 +48,7 @@ group :assets do
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
   gem 'twitter-bootstrap-rails',    '~> 2.0'
+  gem 'less-rails-fontawesome'
 end
 
 

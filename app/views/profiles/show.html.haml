@@ -2,8 +2,26 @@
 - @profile.user.authentications.each do |auth|
   - provider << auth.provider.humanize
 
+- avg_rating =  @profile.profile_ratings.average('rating') || 0
+- user_rating = @profile.profile_ratings.find_by_user_id(current_user) ? @profile.profile_ratings.find_by_user_id(current_user).rating : 0
+
+
 %h2
-  = "#{t('.profile_of')}: #{@profile.name}"
+  ="#{t('.profile_of')}: #{@profile.name}"
+  %br.higher
+
+.vertical-spacer
+  %span.lefty= "(#{t('profiles.avg_rating')})"
+  %span.righty.big_star_read_only{ :avg_rating => avg_rating }
+
+- if @profile.user != current_user
+  .vertical-spacer
+    %span.lefty="(#{t('profiles.your_rating')})"
+    %span.righty.big_star_rating_direct{ :profile_id => @profile.id, :avg_rating => user_rating }
+
+.vertical-spacer
+  = profile_img current_user
+
 
 = simple_form_for(@profile, :html => {:class => 'form-horizontal' }) do |f|
   = f.input :name,        :disabled => true, :hint => @profile.user.email
@@ -14,15 +32,8 @@
   = f.input :website,     :disabled => true, :hint => provider.join(', ')
   = f.input :img_url,     :disabled => true
 
-- avg_rating =  @profile.profile_ratings.average('rating') || 0
-- user_rating = @profile.profile_ratings.find_by_user_id(current_user) ? @profile.profile_ratings.find_by_user_id(current_user).rating : 0
-
-%h2= "#{@profile.name} (#{t('profiles.avg_rating')})"
-%span.big_star_read_only{ :avg_rating => avg_rating }
-
-%h2= "#{@profile.name} (#{t('profiles.your_rating')})"
-%span.big_star_rating_direct{ :profile_id => @profile.id, :avg_rating => user_rating }
-
-
 - if @profile.user == current_user
-  = link_to t('.edit_profile'), edit_profile_path
+  .vertical-spacer
+    %span.footer-link= link_to image_tag("iconics/link.png", :class => "icon", :alt => t('shared.nav.linked_authentication_services')), authentications_url
+    %span.footer-link= link_to t('.edit_profile'), edit_profile_path
+    %span.footer-link= link_to t('.change_password'), edit_user_registration_path

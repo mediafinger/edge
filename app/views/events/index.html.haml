@@ -1,0 +1,15 @@
+%h2 Events
+
+%ul
+  %li= link_to "Show me all events", events_path
+  %li= link_to "Show me all events in Germany", events_in_path(:country => 'de')
+  %li= link_to "Show me only events in Hamburg", events_in_path(:city => 'Hamburg')
+
+- @events.each do |event|
+  %br
+  - @event = event
+  = render 'event_rating'
+  .vertical-spacer
+    = render 'event_summary'
+  %div= link_to "Show details", event_path(event['id'])
+  %hr.short

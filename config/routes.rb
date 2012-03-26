@@ -1,15 +1,22 @@
 Edge::Application.routes.draw do
-  root :to => 'pages#index'
+  root                :to => 'pages#login',     :via => :get      #TODO show Login session#new
+  match '/home',      :to => 'pages#index',     :via => :get
+  match '/be_social', :to => 'pages#broadcast', :via => :get
 
-  devise_for :users,            :controllers  => { :registrations => 'registrations' }
+  devise_for :users,  :controllers  => { :registrations => 'registrations' }
 
-  match '/auth/:provider/callback', :to   => 'authentications#create'
-  match 'auth/failure',             :to   => 'authentications#index'
+  match '/auth/:provider/callback', :to   => 'authentications#create' #,   :via => :post
+  match 'auth/failure',             :to   => 'authentications#index'  #,   :via => :get
   resources :authentications,       :only => [:index, :create, :destroy]
   
   resources :profiles, :only => [:index, :show, :edit, :update] do
     resources :profile_ratings, :as => :ratings,  :only => [:index, :show, :edit, :update]
   end
+  
+  resources :events,    :only => [:index, :show] do
+    resources :ratings, :only => [:index, :show, :edit, :update]
+  end
+  match "/events_in",  :to => 'events#events_in',   :via => :get
 end
 
   # Sample of regular route:

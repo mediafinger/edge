@@ -12,9 +12,16 @@
        
         - if user_signed_in?
           %ul.nav
-            %li= link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"), edit_user_registration_path
-            %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "profile"),  profiles_path
+            %li= link_to image_tag("iconics/home.png", :class => "icon", :alt => "back to start"), home_path
+            %li= link_to image_tag("iconics/star.png", :class => "icon", :alt => "events"), events_path
+            %li= link_to image_tag("iconics/settings.png", :class => "icon", :alt => "settings"), profile_path(current_user.profile)
+            %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "other users"), profiles_path
+            %li= link_to image_tag("iconics/broadcast.png", :class => "icon", :alt => "invite others"),  be_social_path
+            %li= link_to image_tag("iconics/undo.png", :class => "icon", :alt => t('shared.nav.sign_out')), destroy_user_session_path, :method => :delete
+            / %li= ilink_to "user", "All Users", profiles_path, class: ''
 
-        - else
-          %ul.nav
-            %li= link_to image_tag("iconics/invite.png", :class => "icon", :alt => "register!"),  new_user_registration_path
+          - else
+            %ul.nav
+              %li= link_to image_tag("iconics/invite.png", :class => "icon", :alt => "sign up now!"),  new_user_registration_path
+
+
