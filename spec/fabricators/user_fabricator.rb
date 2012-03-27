@@ -6,7 +6,7 @@ Fabricator(:user) do
   password_confirmation   { |user| user.password }
 end
 
-Fabricator(:andy) do
+Fabricator(:andy, :from => :user) do
   name                    { 'Andy' }
   nickname                { '@hhandy' }
   email                   { 'hhandy@gmx.de' }
@@ -14,7 +14,7 @@ Fabricator(:andy) do
   password_confirmation   { 'foobar' }
 end
 
-Fabricator(:andreas) do
+Fabricator(:andreas, :from => :user) do
   name                    { 'Andreas Finger' }
   nickname                { '@mediafinger' }
   email                   { 'andreas.finger@tolingo.de' }
