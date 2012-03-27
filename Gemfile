@@ -24,6 +24,7 @@ source 'http://rubygems.org'
   gem 'httparty',           '~> 0.8'
 
   gem 'copycopter_client',  '~> 2.0'
+  gem 'fabrication',        '~> 1.3'
 
   #  gem 'cancan'
 
@@ -60,7 +61,6 @@ group :development, :test do
 
   # for the tests
   gem 'rspec-rails',        '~> 2.7'
-  gem 'fabrication',        '~> 1.3'
   gem 'ffaker',             '~> 1.13'
   gem 'turn',               :require => false
   gem 'mocha',              '~> 0.10'
