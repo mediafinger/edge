@@ -58,7 +58,7 @@ if defined?(Rails)
   Edge::Events.tap do |config|
     config.base_uri 'http://events.test/'   # Tests and funny fallback
 
-  #  config.base_uri 'http://edge-back.herokuapp.com/'               if Rails.env == "production"
+    config.base_uri 'http://edge-back.herokuapp.com/'               if Rails.env == "production"
   #  config.base_uri 'http://edge-back-staging.herokuapp.com/'       if Rails.env == "staging"
   #  config.base_uri 'http://edge-back-integration.herokuapp.com/'   if Rails.env == "integration"
   #  config.base_uri 'http://events.dev/' 
