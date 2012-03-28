@@ -38,6 +38,7 @@ source 'http://rubygems.org'
   #  gem 'kaminari'
 
   gem 'fabrication',        '~> 1.3'    # for testing and seeding
+  gem 'ffaker',             '~> 1.13'
   
 group :production do
   gem 'pg'          # ,   '~> 0.13'
@@ -61,7 +62,6 @@ group :development, :test do
 
   # for the tests
   gem 'rspec-rails',        '~> 2.7'
-  gem 'ffaker',             '~> 1.13'
   gem 'turn',               :require => false
   gem 'mocha',              '~> 0.10'
   gem 'shoulda-matchers',   '~> 1.0'
