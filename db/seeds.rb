@@ -6,5 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = [Fabricate.build(:profile), Fabricate(:andy), Fabricate(:andreas),
-        Fabricate(:user), Fabricate(:user), Fabricate(:user)]
+users = [Fabricate(:andy), Fabricate(:andreas), Fabricate(:user), Fabricate(:user), Fabricate(:user)]

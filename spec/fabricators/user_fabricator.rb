@@ -3,7 +3,8 @@ Fabricator(:user) do
   password                { |user| 'password' }
   password_confirmation   { |user| user.password }
 
-  profile     { Fabricate.(:profile) }
+  after_create { |user| user.update_attribute(:profile, Fabricate(:profile)) } 
+    # :name => Faker::Name.first_name, :nickname => '@' + Faker::Name.first_name + rand(99).to_s) }
 end
 
 Fabricator(:andy, :from => :user) do
@@ -11,7 +12,7 @@ Fabricator(:andy, :from => :user) do
   password                { 'foobar' }
   password_confirmation   { 'foobar' }
 
-  profile(:fabricator => :pro_andy)
+  after_create { |user| user.update_attribute(:profile, Fabricate(:pro_andy)) }    # :name => 'Andy', :nickname => '@hhandy') }
 end
 
 Fabricator(:andreas, :from => :user) do
@@ -19,5 +20,5 @@ Fabricator(:andreas, :from => :user) do
   password                { 'foobar' }
   password_confirmation   { 'foobar' }
 
-  profile(:fabricator => :pro_andreas)
+  after_create { |user| user.update_attribute(:profile, Fabricate(:pro_andreas)) }   # :name => 'Andreas Finger', :nickname => '@mediafinger') }
 end
