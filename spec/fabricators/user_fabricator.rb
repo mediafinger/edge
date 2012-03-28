@@ -6,14 +6,6 @@ Fabricator(:user) do
   after_create { |user| user.update_attribute(:profile, Fabricate(:profile)) } 
 end
 
-Fabricator(:other_user, :from => :user) do
-  email                   'mail@example.com'
-  password                { |user| 'password' }
-  password_confirmation   { |user| user.password }
-
-  after_create { |user| user.update_attribute(:profile, Fabricate(:profile)) } 
-end
-
 Fabricator(:andy, :from => :user) do
   email                   'hhandy@gmx.de'
   password                'foobar'
