@@ -24,7 +24,6 @@ source 'http://rubygems.org'
   gem 'httparty',           '~> 0.8'
 
   gem 'copycopter_client',  '~> 2.0'
-  gem 'fabrication',        '~> 1.3'
 
   #  gem 'cancan'
 
@@ -38,7 +37,8 @@ source 'http://rubygems.org'
   #  gem 'active_admin'
   #  gem 'kaminari'
 
-
+  gem 'fabrication',        '~> 1.3'    # for testing and seeding
+  
 group :production do
   gem 'pg'          # ,   '~> 0.13'
 end
@@ -71,9 +71,7 @@ group :development, :test do
   gem 'guard',              '~> 1.0'
   gem 'guard-rspec',        '~> 0.5'
   gem 'guard-spin',         '~> 0.1'
-  gem 'rb-fsevent',         :require => false       # for OS X only
-  gem 'growl_notify',       :require => false       # for OS X only
-  # gem 'rb-inotify',         :require => false       # for Linux notification support
-  # gem 'libnotify',          :require => false       # for Linux notification support
+  gem 'rb-fsevent',         :require => false
+  gem 'growl_notify',       :require => false
 end
 
