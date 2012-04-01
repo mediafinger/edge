@@ -1,5 +1,13 @@
-= @event['name']
+%h3= @event['name']
+= render 'event_rating_horizontal'
 %br.higher
-= "#{@event['city']} / #{@event['country']}"
-%br.higher
-= "#{@event['start_date']} - #{@event['end_date']}"
+.vertical-spacer
+  .left-rating
+    = "#{@event['city']} / #{@event['country']}"
+    %br.higher
+    = "#{formatted_date(@event['start_date'])} - #{formatted_date(@event['end_date'])}"
+  .righty
+    = link_to "Show sessions", event_sessions_path(@event['id'])
+    %br.higher
+    = link_to "Show details", event_path(@event['id'])
+

@@ -63,6 +63,10 @@ img {
   padding-right: 1.5em;
   background-color: rgb(222,222,222);
 }
+.big_star_rating_event {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
 
 .authentications {
   overflow: auto;
@@ -149,6 +153,11 @@ img {
   float: left;
   width: 12em;
   font-weight: bold;
+  padding-right: 1em;
+}
+.left-rating {
+  float: left;
+  width: 16em;
   padding-right: 1em;
 }
 

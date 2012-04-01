@@ -1,0 +1,14 @@
+- rating_sum = 0
+- rating_array = Rating.find_all_by_event_id(@event['id'])
+- rating_array.each{ |r| rating_sum += r[:rating] } if rating_array
+- avg_rating = rating_array.count > 0 ? (rating_sum.to_f / rating_array.count) : 0      
+
+- my_rating = Rating.find_by_user_id_and_event_id(current_user.id, @event['id'])
+- rating = my_rating ? my_rating.rating : 0
+
+%span.left-rating
+  = '∅ :'
+  %span.big_star_read_only{ :avg_rating => avg_rating }
+%span.righty
+  = 'You:'
+  %span.big_star_rating_event{ :event_id => @event['id'], :avg_rating => rating }

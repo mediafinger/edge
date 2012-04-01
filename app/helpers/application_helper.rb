@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def formatted_date(datestring)
+    date = Date.parse(datestring.to_s) if datestring
+    date ? date.strftime('%d.%m.%Y') : ''
+  end
+
   def link_to_twitter(user)
     unless user.profile.nickname.blank?
       link_to "@#{user.profile.nickname}", "https://twitter.com/#!/#{user.profile.nickname}"
