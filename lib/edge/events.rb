@@ -6,18 +6,6 @@ module Edge
       get("/events.json").parsed_response
     end
 
-    # Call Events with list of IDs and return list of events
-    #
-    # def self.find_all_by_id(params[:id_list])
-    #   params[:id_list].each do |id|
-    #     get("/events.json/#{id}.json").parsed_response
-    #   end
-    # end
-
-    # def get_events_from_ids(*rating_list)
-    #   Event.find_all_by_id(rating_list.flatten, :select => 'event_id').map(&:id)
-    # end
-
     def self.find(id)
       get("/events/#{id}.json").parsed_response
     end
@@ -35,21 +23,34 @@ module Edge
       get("/events.json?country=#{country}").parsed_response
     end
 
-    def self.create(attributes)
-      attributes = {
-        :user_id => current_user.id
-      }.merge(attributes)
 
-      post('/events', :body => { :event => attributes })
+    ### Sessions
+
+    def self.find_sessions(event_id)
+      get("/events/#{event_id}/sessions.json").parsed_response
     end
 
-    def self.find_by_audience(attributes)
-      attributes = {
-        :audience => 'Fachpublikum',
-      }.merge(attributes)
-
-      get("/events/#{attributes[:event_id]}/do_something.json", :query => attributes)
+    def self.find_session(event_id, id)
+      get("/events/#{event_id}/sessions/#{id}.json").parsed_response
     end
+
+    ### More Event stuff
+
+    # def self.create(attributes)
+    #   attributes = {
+    #     :user_id => current_user.id
+    #   }.merge(attributes)
+
+    #   post('/events', :body => { :event => attributes })
+    # end
+
+    # def self.find_by_audience(attributes)
+    #   attributes = {
+    #     :audience => 'Fachpublikum',
+    #   }.merge(attributes)
+
+    #   get("/events/#{attributes[:event_id]}/do_something.json", :query => attributes)
+    # end
   end
 end
 

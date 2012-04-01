@@ -1,0 +1,18 @@
+.vertical-spacer
+  .lefty= 'Name: '
+  .righty
+    %h3= @session['name']
+%br
+.lefty= 'Description: '
+.righty= @session['description']
+%br.higher
+.lefty= 'Speaker: '
+.righty= @session['speaker']
+%br.higher
+.lefty= 'url: '
+.righty= @session['url']
+%br.higher
+.lefty= 'Day / Room / Length: '
+.righty= "#{@session['day']} / #{@session['room']} / #{@session['length']}"
+%br
+%hr.short
