@@ -1,9 +1,0 @@
-%h2= "Profile Rating of #{@profile.name}"
-
-%span.big_star_read_only{ :avg_rating => @profile_rating.rating }
-= link_to 'Edit', edit_profile_rating_path
-
-%ul
-  %li= @profile_rating.inspect
-  %li= @profile.inspect
-  %li= @user.inspect
