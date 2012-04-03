@@ -32,6 +32,10 @@ img {
   border: 0em;
 }
 
+.clearer {
+  clear: both;
+}
+
 .icon {
   height: 2.5em;   /* 32px; */
   width:  2.5em;
@@ -186,4 +190,26 @@ img {
 .footer-link {
   float: left;
   padding-left: 5em;
+}
+
+.event-box-a {
+  float: left;
+  margin: 1em;
+  padding: 1em;
+  padding-bottom: 2em;
+  width: 33em;
+  border: solid #ddd 0.1em;
+  border-radius: 1em;
+  background: #fcfcfc;
+}
+
+.event-box-b {
+  float: left;
+  margin: 1em;
+  padding: 1em;
+  padding-bottom: 2em;
+  width: 33em;
+  border: solid #ddd 0.1em;
+  border-radius: 1em;
+  background: #f6f6f6;
 }

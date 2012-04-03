@@ -4,7 +4,17 @@
   %li= link_to "Show me all events", events_path
   %li= link_to "Show me only events in Hamburg", events_in_path(:city => 'Hamburg')
 
+- boxtoggler = true
+
 - @events.each do |event|
   - @event = event
-  .vertical-spacer
-    = render 'event_summary'
+
+  - if boxtoggler
+    .vertical-spacer.event-box-a
+      = render 'event_summary'
+  - else
+    .vertical-spacer.event-box-b
+      = render 'event_summary'
+      .clearer
+
+  - boxtoggler = !boxtoggler
