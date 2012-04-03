@@ -18,7 +18,12 @@
             %li= link_to image_tag("iconics/user_24x.png", :class => "icon", :alt => "other users"), profiles_path
             %li= link_to image_tag("iconics/broadcast.png", :class => "icon", :alt => "invite others"),  be_social_path
             %li= link_to image_tag("iconics/undo.png", :class => "icon", :alt => t('shared.nav.sign_out')), destroy_user_session_path, :method => :delete
-            / %li= ilink_to "user", "All Users", profiles_path, class: ''
+
+            / %li.ifontz-xl= ilink_to 'home', '', home_path
+            / %li.ifontz-xl= ilink_to 'trash', '', home_path
+            / %li.ifontz-xl= ilink_to 'user', '', home_path
+            / %li.ifontz-xl= ilink_to 'star', '', home_path
+
 
           - else
             %ul.nav

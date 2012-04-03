@@ -41,6 +41,8 @@ img {
   width:  2.5em;
 }
 
+.ifontz-xl { font-size: 3em; max-height: 1em; width: 1em; }
+
 .gfx {
   width: 3.7em;   /* 48px; */
 }
