@@ -39,6 +39,9 @@ module Edge
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    # Add folders to the assets path
+    config.assets.paths << Rails.root.join("app", "assets", "fonts", "iconic_stroke")
+
     # Enable the asset pipeline
     config.assets.enabled = true
 

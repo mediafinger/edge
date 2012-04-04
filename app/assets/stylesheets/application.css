@@ -41,7 +41,20 @@ img {
   width:  2.5em;
 }
 
-.ifontz-xl { font-size: 3em; max-height: 1em; width: 1em; }
+/*.ifontz-xl { font-size: 3em; max-height: 1em; width: 1em; }*/
+
+.font-l {
+  font-size: 2em;
+}
+
+.font-xl {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+.iconic-nav {
+  
+}
 
 .gfx {
   width: 3.7em;   /* 48px; */
