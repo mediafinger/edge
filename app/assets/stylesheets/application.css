@@ -57,6 +57,12 @@ img {
 
 .iconic-nav {
   color: #ffc40d;
+  margin-right: 0.3em;
+}
+
+.nav-head {
+  font-size: 2em;
+  margin-right: 0.4em;
 }
 
 .gfx {

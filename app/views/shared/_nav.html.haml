@@ -12,13 +12,13 @@
        
         - if user_signed_in?
           %ul.nav
-            %li.font-xl= link_to iconic_nav(:home), home_path, :title => t('shared.nav.home')
-            %li.font-xl= link_to iconic_nav(:star), events_path
-            %li.font-xl= link_to iconic_nav(:cog), profile_path(current_user.profile)
-            %li.font-xl= link_to iconic_nav(:user), profiles_path
-            %li.font-xl= link_to iconic_nav(:rss_alt), be_social_path
-            %li.font-xl= link_to iconic_nav(:undo), destroy_user_session_path, :method => :delete, :title => t('shared.nav.sign_out')
+            %li.nav-head= link_to iconic_nav(:home) + 'home', home_path, :title => t('shared.nav.home')
+            %li.nav-head= link_to iconic_nav(:star) + 'events', events_path
+            %li.nav-head= link_to iconic_nav(:cog) + 'settings', profile_path(current_user.profile)
+            %li.nav-head= link_to iconic_nav(:user) + 'users', profiles_path
+            %li.nav-head= link_to iconic_nav(:rss_alt) + 'be social', be_social_path
+            %li.nav-head= link_to iconic_nav(:undo) + 'log out', destroy_user_session_path, :method => :delete, :title => t('shared.nav.sign_out')
 
           - else
             %ul.nav
-              %li.font-xl= link_to iconic_nav(:fullscreen_exit_alt), new_user_registration_path, :title => "Sign up now!"
+              %li.nav-head= link_to iconic_nav(:fullscreen_exit_alt) + 'sign up!', new_user_registration_path, :title => "Sign up now!"
