@@ -34,6 +34,7 @@
 
 - if @profile.user == current_user
   .vertical-spacer
-    %span.footer-link= link_to image_tag("iconics/link.png", :class => "icon", :alt => t('shared.nav.linked_authentication_services')), authentications_url
+    %span.footer-link
+      %span.font-xl= link_to iconic(:link), authentications_url, :link => t('shared.nav.linked_authentication_services')
     %span.footer-link= link_to t('.edit_profile'), edit_profile_path
     %span.footer-link= link_to t('.change_password'), edit_user_registration_path

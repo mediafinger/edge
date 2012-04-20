@@ -4,5 +4,6 @@
   = render 'event'
 
 .vertical-spacer
-  = link_to image_tag("iconics/comment.png", :class => "icon"), home_path  #FIXME (25)
-  Comment on this event (25)
+  %span.font-xl= link_to iconic(:chat), home_path  #FIXME (25)
+  %span= link_to "Comment on this event (25)", home_path  #FIXME (25)
+  

@@ -77,7 +77,7 @@ module IconicFontHelper
     image: '&#xe027;',
     info: '&#x2139;',
     iphone: '&#xe06e;',
-    key_fill: '&#x26bf;',
+    key: '&#x26bf;',
     last: '&#xe04d;',
     layers: '&#xe01f;',
     layers_alt: '&#xe020;',
@@ -154,14 +154,14 @@ module IconicFontHelper
   }
 
   def iconic(name)
-    content_tag('span', class: 'iconic') do
+    content_tag('span', class: 'tip iconic') do
       raw ICONIC_FONT_NAMES[name]
     end
   end
 
 
   def iconic_nav(name)
-    content_tag('span', class: 'iconic iconic-nav') do
+    content_tag('span', class: 'tip iconic-nav') do
       raw ICONIC_FONT_NAMES[name]
     end
   end

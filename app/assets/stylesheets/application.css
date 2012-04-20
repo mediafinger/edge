@@ -41,8 +41,6 @@ img {
   width:  2.5em;
 }
 
-/*.ifontz-xl { font-size: 3em; max-height: 1em; width: 1em; }*/
-
 .font-l {
   font-size: 2em;
 }
@@ -52,8 +50,13 @@ img {
   font-weight: bold;
 }
 
+.iconic {
+  color: #08c;
+  margin-right: 0.5em;
+}
+
 .iconic-nav {
-  
+  color: #ffc40d;
 }
 
 .gfx {
@@ -204,7 +207,7 @@ img {
 
 .footer-link {
   float: left;
-  padding-left: 5em;
+  padding-right: 3em;
 }
 
 .event-box-a {
