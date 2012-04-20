@@ -36,7 +36,7 @@ RSpec.configure do |config|
   config.before(:each) { reset_email }
 
   # Add Devise helpers for testing
-  config.include Devise::TestHelpers, :type => :controller
-  config.extend ControllerMacros, :type => :controller
+  config.include  Devise::TestHelpers,  :type => :controller
+  config.extend   ControllerMacros,     :type => :controller
 end
 
