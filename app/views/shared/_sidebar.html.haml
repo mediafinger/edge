@@ -14,8 +14,8 @@
       %li.nav-header= t('.sign_in')
 
       / Sign in with Username and Password
-      %li.font-xl= link_to iconic_nav(:key), new_user_session_path, :title => t('shared.nav.sign_in')
+      %li.font-l= link_to iconic_nav(:key), new_user_session_path, :title => t('shared.nav.sign_in')
 
       / Sign in using an Oauth provider
-      -['Twitter', 'Google', 'Github', 'Facebook', 'Open_ID', 'XING' ].each do |provider|
+      -['Twitter', 'Dropbox', 'Google', 'Github', 'Facebook', 'Open_ID', 'XING' ].each do |provider|
         %li= link_to(image_tag("auth/#{provider.downcase}_32.png", :class => 'gfx', :alt => "#{provider}"), "/auth/#{provider.downcase}")
