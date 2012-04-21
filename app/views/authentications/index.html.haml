@@ -18,5 +18,5 @@
     %strong
       = t('.sign_in_through')
 
--['Twitter', 'Google', 'Github', 'Facebook', 'Open_ID', 'XING' ].each do |provider|
+-['Twitter', 'Dropbox', 'Google', 'Github', 'Facebook', 'Open_ID', 'XING' ].each do |provider|
   .auth_provider= link_to(image_tag("auth/#{provider.downcase}_32.png", :class => 'gfx', :alt => "#{provider}") + "#{provider}", "/auth/#{provider.downcase}")
