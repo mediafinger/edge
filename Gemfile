@@ -14,16 +14,19 @@ source 'http://rubygems.org'
 
   gem 'devise',             '~> 2.0'
   gem 'omniauth',           '~> 1.0'
-  gem 'omniauth-twitter',   '~> 0.0.8'
-  gem 'omniauth-openid',    '~> 1.0'
+  gem 'omniauth-dropbox',   '~> 0.2'
   gem 'omniauth-facebook',  '~> 1.2'
   gem 'omniauth-github',    '~> 1.0'
+  gem 'omniauth-openid',    '~> 1.0'
+  gem 'omniauth-twitter',   '~> 0.0.8'
   gem 'omniauth-xing',      '~> 0.1'
 
-  gem 'simple_form',        '~> 2.0'
+  gem 'dropbox-api',        '~> 0.2'
+
+  gem 'simple_form',        '~> 2.0'    # kick it?
   gem 'httparty',           '~> 0.8'
 
-  gem 'copycopter_client',  '~> 2.0'
+  gem 'copycopter_client',  '~> 2.0'    # all the translations
 
   #  gem 'cancan'
 
