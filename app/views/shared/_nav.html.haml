@@ -16,7 +16,7 @@
             %li.nav-head= link_to iconic_nav(:star) + 'events', events_path
             %li.nav-head= link_to iconic_nav(:cog) + 'settings', profile_path(current_user.profile)
             %li.nav-head= link_to iconic_nav(:user) + 'users', profiles_path
-            %li.nav-head= link_to iconic_nav(:rss_alt) + 'be social', be_social_path
+            %li.nav-head= link_to iconic_nav(:rss_alt) + 'be social', files_path
             %li.nav-head= link_to iconic_nav(:undo) + 'log out', destroy_user_session_path, :method => :delete, :title => t('shared.nav.sign_out')
 
           - else

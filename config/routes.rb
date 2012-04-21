@@ -18,6 +18,8 @@ Edge::Application.routes.draw do
     resources :ratings, :only => [:index, :show, :edit, :update]
   end
   match "/events_in",  :to => 'events#events_in',   :via => :get
+
+  resources :files,   :only => [:index, :show, :update]
 end
 
   # Sample of regular route:

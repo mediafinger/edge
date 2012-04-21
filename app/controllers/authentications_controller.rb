@@ -9,6 +9,8 @@ class AuthenticationsController < ApplicationController
     auth = request.env["omniauth.auth"]
     authentication = find_existing auth
 
+    update_dropbox_data(authentication, auth)  if authentication && auth['provider'] == 'dropbox'
+
     if authentication && current_user.nil?                              # auth known, user not logged in
       flash[:notice] = t("devise.omniauth_callbacks.success", :kind => auth['provider'])
       sign_in_and_redirect(:user, authentication.user)
@@ -46,9 +48,15 @@ class AuthenticationsController < ApplicationController
 private
 
     def find_existing(auth)
-      auth['uid'] = auth['code'] if auth['provider'] == 'github'              # github, or oauth 2.0 issue ??
+      auth['uid'] = auth['code'] if auth['provider'] == 'github'              # github, or oauth 2.0 issue ??      
       Authentication.find_by_provider_and_uid(auth['provider'], auth['uid'])
     end
+
+    def update_dropbox_data(authentication, auth)
+      authentication.update_attibute(:secret, auth['credentials']['secret'])
+      authentication.update_attibute(:token,  auth['credentials']['token'])
+    end
+
 
     # to stop devise from destroying all sessions, when trying to add OpenId and this appears:
     # WARNING: Can't verify CSRF token authenticity

@@ -5,6 +5,23 @@ module ApplicationHelper
     date ? date.strftime('%d.%m.%Y') : ''
   end
 
+  def formatted_filesize(bytes)
+    f = Float(bytes)
+    if f < 1000
+      s = "%.0f" % f
+      " (#{s} Bytes)"
+    elsif f < 100000
+      s = "%.2f" % (f / 1000)
+      " (#{s} KBytes)"
+    elsif f < 100000000
+      s = "%.2f" % (f / 1000000)
+      " (#{s} MBytes)"
+    else
+      s = "%.2f" % (f / 1000000000)
+      " (#{s} GBytes)"
+    end
+  end
+
   def link_to_twitter(user)
     unless user.profile.nickname.blank?
       link_to "@#{user.profile.nickname}", "https://twitter.com/#!/#{user.profile.nickname}"

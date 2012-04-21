@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     data = omniauth.info
     self.email = data['email']  if data['email'] && self.email.blank?
     profile.set_twitter_attributes(omniauth.info) if omniauth['provider'] == 'twitter'
-    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+    build_authentication(omniauth)
   end
 
   # if a user does not use omniauth or already has a password, it will get validated
@@ -24,5 +24,13 @@ class User < ActiveRecord::Base
     authentications.empty? || !password.blank? && super
   end
 
+  def build_authentication(omniauth)
+    if omniauth['provider'] == 'dropbox'
+      authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'],
+                            :secret => omniauth['credentials']['secret'], :token => omniauth['credentials']['token'])
+    else
+      authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+    end
+  end
 end
 

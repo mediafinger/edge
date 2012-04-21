@@ -1,0 +1,11 @@
+%h2= "Hello #{@client.account.display_name} from #{@client.account.country}"
+
+%h3= "These are the files in your Dropbox folder /apps/edge/"
+
+%ul
+- @client.ls.each do |file|
+    %li= file.path + formatted_filesize(file.bytes)
+    - puts ap file
+
+
+-#= @client.account
