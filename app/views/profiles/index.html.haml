@@ -6,7 +6,7 @@
   - @profiles.each do |p|
     %li.wide
       - if p.user_id == current_user.id
-        %span.font-l= link_to iconic(:cog), profile_path(p), :title => t('shared.nav.your_profile')
+        %span= link_to iconic(:cog), profile_path(p), :title => t('shared.nav.your_profile')
         / Magic Star Rating thing Raty:
         - if @avg_rating_true
           - rating = p.profile_ratings.average('rating') || 0
@@ -15,7 +15,7 @@
           %span.big_star_read_only{ :avg_rating => rating }
 
       - else
-        %span.font-l= link_to iconic(:magnifying_glass), profile_path(p), :title => "view details"
+        %span= link_to iconic(:magnifying_glass), profile_path(p), :title => "view details"
         / Magic Star Rating thing Raty:
         - if @avg_rating_true
           - rating = p.profile_ratings.average('rating') || 0

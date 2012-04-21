@@ -52,17 +52,24 @@ img {
 
 .iconic {
   color: #08c;
+  font-size: 1.5em;
   margin-right: 0.5em;
+  vertical-align: bottom;
 }
 
 .iconic-nav {
+  font-size: 1.5em;
   color: #ffc40d;
   margin-right: 0.3em;
 }
 
 .nav-head {
-  font-size: 2em;
+  font-size: 1.2em;
   margin-right: 0.4em;
+}
+
+.navbar .nav > li > a:visited {
+  color: #ffc40d;
 }
 
 .gfx {
