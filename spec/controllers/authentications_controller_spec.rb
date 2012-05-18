@@ -5,7 +5,6 @@ describe AuthenticationsController do
   Fabricate(:twitter)
   Fabricate(:openid)
   render_views
-
   login_user  # devise helper from controller macros
 
   it "index action should render index template" do

@@ -1,17 +1,16 @@
 source 'http://rubygems.org'
 
-  # running on ruby 1.9.3-p125
+  # running on ruby 1.9.3-p125 and 1.9.3-p194
 
   gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.2'
+  gem 'rails',              '3.2.3'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
-  gem 'pg'                  # , '~> 0.13'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
   gem 'execjs',             '~> 1.2'
-  gem 'therubyracer',       '0.9.10'
+  gem 'therubyracer',       '~> 0.10'
 
   gem 'devise',             '~> 2.0'
   gem 'omniauth',           '~> 1.0'
@@ -44,12 +43,18 @@ source 'http://rubygems.org'
   gem 'fabrication',        '~> 1.3'    # for testing and seeding
   gem 'ffaker',             '~> 1.13'
 
+
 group :assets do
   gem 'sass-rails',                 '~> 3.2'
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
   gem 'twitter-bootstrap-rails',    '~> 2.0'
   gem 'less-rails-fontawesome'
+end
+
+
+group :production do
+  gem 'pg'                  # , '~> 0.13'
 end
 
 
@@ -60,17 +65,18 @@ group :development, :test do
   gem 'awesome_print',      '~> 1.0'
 
   # for the tests
-  gem 'rspec-rails',        '~> 2.7'
+  gem 'rspec-rails',        '~> 2.10'
   gem 'turn',               :require => false
   gem 'mocha',              '~> 0.10'
   gem 'shoulda-matchers',   '~> 1.0'
-
-  # for an autotest-ish workflow:
-  # gem 'spin',               '~> 0.1'
-  # gem 'guard',              '~> 1.0'
-  # gem 'guard-rspec',        '~> 0.5'
-  # gem 'guard-spin',         '~> 0.1'
-  # gem 'rb-fsevent',         :require => false
-  # gem 'growl_notify',       :require => false
 end
-
+  
+# for an autotest-ish workflow:
+group :development do
+  gem 'spin',               '~> 0.1'
+  gem 'guard',              '~> 1.0'
+  gem 'guard-rspec',        '~> 0.5'
+  gem 'guard-spin',         '~> 0.1'
+  gem 'rb-fsevent',         :require => false
+  gem 'growl_notify',       :require => false
+end
