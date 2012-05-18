@@ -70,11 +70,11 @@ group :development, :test do
   gem 'shoulda-matchers',   '~> 1.0'
 
   # for an autotest-ish workflow:
-  gem 'spin',               '~> 0.1'
-  gem 'guard',              '~> 1.0'
-  gem 'guard-rspec',        '~> 0.5'
-  gem 'guard-spin',         '~> 0.1'
-  gem 'rb-fsevent',         :require => false
-  gem 'growl_notify',       :require => false
+  # gem 'spin',               '~> 0.1'
+  # gem 'guard',              '~> 1.0'
+  # gem 'guard-rspec',        '~> 0.5'
+  # gem 'guard-spin',         '~> 0.1'
+  # gem 'rb-fsevent',         :require => false
+  # gem 'growl_notify',       :require => false
 end
 
