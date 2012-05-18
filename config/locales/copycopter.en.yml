@@ -1,4 +1,3 @@
----
 en:
   activerecord:
     attributes:
@@ -10,6 +9,10 @@ en:
         nickname: Nickname
         profession: Profession
         website: Website
+      profile_rating:
+        rating: Rating
+      rating:
+        rating: Rating
       user:
         current_password: Current password
         email: Email
@@ -21,12 +24,25 @@ en:
         record_invalid: ! 'Validation failed: %{errors}'
         taken: has already been taken
       models:
+        profile_rating:
+          attributes:
+            rating:
+              inclusion: can only be between 1 and 5.
+        rating:
+          attributes:
+            rating:
+              inclusion: can only be between 1 and 5.
         user:
           attributes:
             email:
               blank: can't be blank
+              invalid: is invalid
+            password:
+              too_short: is too short (minimum is 6 characters)
     models:
       profile: Profile
+      profile_rating: Profile rating
+      rating: Rating
       user: User
   authentication_bound_to_other_user: Authentication bound to other user account!
   authentication_successful: Authentication successful.
@@ -106,6 +122,9 @@ en:
       unconfirmed: You have to confirm your account before continuing.
       user:
         invalid: Invalid email or password.
+        unauthenticated: You need to sign in or sign up before continuing.
+    general:
+      sign_in: Log In
     mailer:
       confirmation_instructions:
         subject: Confirmation instructions
@@ -142,10 +161,13 @@ en:
         to verify your new email address. Please check your email and click on the
         confirm link to finalize confirming your new email address.
       updated: You updated your account successfully.
+      user:
+        signed_up: Welcome! You have signed up successfully.
     sessions:
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
       user:
+        signed_in: Signed in successfully.
         signed_out: Signed out successfully.
     unlocks:
       send_instructions: You will receive an email with instructions about how to
@@ -229,20 +251,24 @@ en:
           mb: MB
           tb: TB
   profiles:
+    avg_rating: Average Rating
     edit:
       twitter_name: Your name on Twitter
       your_profile: Your user profile
     show:
       edit_profile: Edit your profile
       profile_of: Profile of
+    your_rating: Your Rating
   shared:
     header:
       title: the edge
     nav:
+      home: take me home
       linked_authentication_services: your linked authentication services
       sign_in: ! 'sign in:'
       sign_out: sign_out
       signed_in_as: ! 'signed in as:'
+      your_profile: Your Profile
   sign_in_successful: Signed in successfully.
   simple_form:
     error_notification:

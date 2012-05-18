@@ -26,7 +26,7 @@ source 'http://rubygems.org'
   gem 'simple_form',        '~> 2.0'    # kick it?
   gem 'httparty',           '~> 0.8'
 
-  gem 'copycopter_client',  '~> 2.0'    # all the translations
+#  gem 'copycopter_client',  '~> 2.0'    # all the translations
 
   #  gem 'cancan'
 
