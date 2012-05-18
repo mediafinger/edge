@@ -8,4 +8,5 @@ env:
 
 bundler_args: "--without development production" 
 before_script: 
+  - "bundle exec rake db:migrate"
   - "bundle exec rake db:test:prepare" 
