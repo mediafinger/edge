@@ -1,4 +1,11 @@
 language: ruby
 rvm:
   - 1.9.3
-gemfile: Gemfile
+gemfile: Gemfile  
+
+env: 
+  - DB=sqlite
+
+bundler_args: "--without development production" 
+before_script: 
+  - "bundle exec rake db:test:prepare" 

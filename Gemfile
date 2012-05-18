@@ -59,7 +59,7 @@ end
 
 group :development, :test do
   # for development
-  gem 'sqlite3',            '~> 1.3'
+  gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
   gem 'annotate',           '~> 2.4'
   gem 'awesome_print',      '~> 1.0'
 
