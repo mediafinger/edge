@@ -10,11 +10,15 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :authentications
 
-  before_create :build_profile
+  before_create do
+    profile ||= build_profile
+    true
+  end
 
   def apply_omniauth(omniauth)
     data = omniauth.info
     self.email = data['email']  if data['email'] && self.email.blank?
+    build_profile if profile.blank?
     profile.set_twitter_attributes(omniauth.info) if omniauth['provider'] == 'twitter'
     build_authentication(omniauth)
   end
