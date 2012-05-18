@@ -4,7 +4,7 @@ sqlite: &sqlite
 
 postgresql: &postgresql
   adapter: postgresql
-  username: postgres
+  username: andy
   password:
   database: edge_<%= Rails.env %>
   min_messages: ERROR
@@ -23,6 +23,7 @@ test:
 
 production:
   <<: *defaults
+
 
 # development:
 #   adapter: sqlite3

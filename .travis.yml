@@ -6,9 +6,9 @@ bundler_args: "--without development production"
 
 env: 
   - DB=sqlite
-  - DB=postgresql
+  # - DB=postgresql
 
 before_script:
-  - psql -c 'create database edge_test' -U postgres
+  # - psql -c 'create database edge_test' -U postgres
   - "bundle exec rake db:migrate"
   - "bundle exec rake db:test:prepare" 
