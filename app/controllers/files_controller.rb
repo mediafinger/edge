@@ -2,6 +2,7 @@ class FilesController < ApplicationController
 
   def index
     @client = get_client
+    redirect_to be_social_path if @client.blank?
   end
 
   def show
@@ -20,6 +21,7 @@ private
 
     def get_client
       dropbox_auth = Authentication.find_by_provider_and_user_id('dropbox', current_user.id)
+      return nil if dropbox_auth.blank?
       Dropbox::API::Client.new(:token  => dropbox_auth.token, :secret => dropbox_auth.secret)
     end
 
