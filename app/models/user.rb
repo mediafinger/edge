@@ -18,8 +18,7 @@ class User < ActiveRecord::Base
   def apply_omniauth(omniauth)
     data = omniauth.info
     self.email = data['email']  if data['email'] && self.email.blank?
-    build_profile if profile.blank?
-    profile.set_twitter_attributes(omniauth.info) if omniauth['provider'] == 'twitter'
+    fill_profile(omniauth)
     build_authentication(omniauth)
   end
 
@@ -35,6 +34,11 @@ class User < ActiveRecord::Base
     else
       authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
     end
+  end
+
+  def fill_profile(omniauth)
+    build_profile if profile.blank?
+    profile.set_twitter_attributes(omniauth.info) if omniauth['provider'] == 'twitter'
   end
 end
 

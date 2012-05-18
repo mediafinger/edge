@@ -7,9 +7,25 @@ describe User do
     it { should validate_presence_of(:password) }
   end
 
-  it "should have a real email address" do
+  it "should have the given email address" do
     user = Fabricate(:user, :email => 'andy@example.com')
     user.email.should == "andy@example.com"
+  end
+
+  context ".profile" do
+    it "should create a profile for a new user" do
+      user = User.create(:email => "a@be.ce", :password => "foobar")
+      user.profile.should_not be_blank
+    end
+  end
+
+  context ".fill_profile" do
+    it "should create a profile for a new user" do
+      user = User.new
+      user.profile.should be_blank
+      user.fill_profile({})
+      user.profile.should_not be_blank
+    end
   end
 end
 
