@@ -6,6 +6,7 @@ source 'http://rubygems.org'
   gem 'rails',              '3.2.2'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
+  gem 'pg'                  # , '~> 0.13'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
@@ -42,11 +43,6 @@ source 'http://rubygems.org'
 
   gem 'fabrication',        '~> 1.3'    # for testing and seeding
   gem 'ffaker',             '~> 1.13'
-  
-group :production do
-  gem 'pg'          # ,   '~> 0.13'
-end
-
 
 group :assets do
   gem 'sass-rails',                 '~> 3.2'
