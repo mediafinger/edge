@@ -3,7 +3,7 @@ source 'http://rubygems.org'
   # running on ruby 1.9.3-p125 and 1.9.3-p194
 
   gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.3'
+  gem 'rails',              '3.2.6'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
 
@@ -53,9 +53,11 @@ group :assets do
 end
 
 
-group :production do
-  gem 'pg'                  # , '~> 0.13'
-end
+gem 'pg'
+
+# group :production do
+#   gem 'pg'                  # , '~> 0.13'
+# end
 
 
 group :development, :test do

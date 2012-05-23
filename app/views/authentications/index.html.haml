@@ -7,7 +7,7 @@
       - for authentication in @authentications
         .authentication.round
           = image_tag "auth/#{authentication.provider}_32.png", :class => 'gfx'
-          .font-l= link_to iconic(:x), authentication, :confirm => t('.confirm_remove_service'), :method => :delete, :class => "remove", :title => "remove"
+          .font-l= link_to iconic(:x), authentication, :data => { :confirm => t('.confirm_remove_service') }, :method => :delete, :class => "remove", :title => "remove"
           .provider= authentication.provider.humanize
           .uid= "ID: #{authentication.uid}"
   %p
