@@ -16,3 +16,6 @@ Stand-alone this app might be used as a scaffold for user-login via email+passwo
 
 _Note to myself: do not forget to call `heroku run rake db:setup` after deploying._
 
+
+
+[![Build Status](https://secure.travis-ci.org/mediafinger/edge.png?branch=master)](http://travis-ci.org/mediafinger/edge)
