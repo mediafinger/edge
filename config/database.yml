@@ -4,16 +4,16 @@ sqlite: &sqlite
 
 postgresql: &postgresql
   adapter: postgresql
-  username: andy
-  password:
   database: edge_<%= Rails.env %>
-  min_messages: ERROR
+#   username: andy
+#   password:
+#   min_messages: ERROR
 
 defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "sqlite" %>
+  <<: *<%= ENV['DB'] || "postgresql" %>   # whatever is in this line will be the DB
 
 development:
   <<: *defaults
@@ -23,23 +23,3 @@ test:
 
 production:
   <<: *defaults
-
-
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite3
-#   pool: 5
-#   timeout: 5000
-
-# test:
-#   adapter: sqlite3
-#   database: db/test.sqlite3
-#   #database: ":memory:"
-#   pool: 5
-#   timeout: 500
-
-# production:
-#   adapter: sqlite3
-#   database: db/production.sqlite3
-#   pool: 5
-#   timeout: 5000

@@ -6,6 +6,7 @@ source 'http://rubygems.org'
   gem 'rails',              '3.2.6'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.40'
+  gem 'pg'                  # '~> 0.14'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
@@ -25,18 +26,15 @@ source 'http://rubygems.org'
 
   gem 'simple_form',        '~> 2.0'    # kick it?
   gem 'httparty',           '~> 0.8'
+  gem 'awesome_print',      '~> 1.0'
 
-#  gem 'copycopter_client',  '~> 2.0'    # all the translations
+  #  gem 'copycopter_client',  '~> 2.0'    # all the translations
 
   #  gem 'cancan'
-
   #  gem 'decent_exposure'
   #  gem 'draper'
-
   #  gem 'rdiscount'
   #  gem 'carrierwave'
-  #  gem 'dropbox-api'
-
   #  gem 'active_admin'
   #  gem 'kaminari'
 
@@ -53,18 +51,10 @@ group :assets do
 end
 
 
-gem 'pg'
-
-# group :production do
-#   gem 'pg'                  # , '~> 0.13'
-# end
-
-
 group :development, :test do
   # for development
   gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
   gem 'annotate',           '~> 2.4'
-  gem 'awesome_print',      '~> 1.0'
 
   # for the tests
   gem 'rspec-rails',        '~> 2.10'
@@ -72,6 +62,7 @@ group :development, :test do
   gem 'mocha',              '~> 0.10'
   gem 'shoulda-matchers',   '~> 1.0'
 end
+
   
 # for an autotest-ish workflow:
 group :development do

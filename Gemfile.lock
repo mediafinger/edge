@@ -147,7 +147,7 @@ GEM
       multi_json
       omniauth-oauth (~> 1.0.0)
     orm_adapter (0.1.0)
-    pg (0.13.2)
+    pg (0.14.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
