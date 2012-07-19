@@ -26,6 +26,8 @@ describe AuthenticationsController do
 
   it "destroy action should destroy model and redirect to index action" do
     authentication = Authentication.first
+    controller.stub_chain(:current_user, :authentications, :find).and_return(authentication)
+    
     delete :destroy, :id => authentication
     response.should redirect_to(authentications_url)
     Authentication.exists?(authentication.id).should be_false
