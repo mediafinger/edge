@@ -1,4 +1,3 @@
-config/*.yml
 .ackrc
 .sass-cache
 vendor/bundle
