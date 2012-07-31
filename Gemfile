@@ -3,9 +3,9 @@ source 'http://rubygems.org'
   # running on ruby 1.9.3-p125 and 1.9.3-p194
 
   gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.6'
+  gem 'rails',              '3.2.7'
   gem 'thin',               '~> 1.3'
-  gem 'foreman',            '~> 0.40'
+  gem 'foreman',            '~> 0.50'
   gem 'pg'                  # '~> 0.14'
 
   gem 'haml-rails',         '~> 0.3'
@@ -14,15 +14,15 @@ source 'http://rubygems.org'
   gem 'therubyracer',       '~> 0.10'
 
   gem 'devise',             '~> 2.0'
-  gem 'omniauth',           '~> 1.0'
+  gem 'omniauth',           '~> 1.1'
   gem 'omniauth-dropbox',   '~> 0.2'
-  gem 'omniauth-facebook',  '~> 1.2'
+  gem 'omniauth-facebook',  '~> 1.4'
   gem 'omniauth-github',    '~> 1.0'
   gem 'omniauth-openid',    '~> 1.0'
   gem 'omniauth-twitter',   '~> 0.0.8'
   gem 'omniauth-xing',      '~> 0.1'
 
-  gem 'dropbox-api',        '~> 0.2'
+  gem 'dropbox-api',        '~> 0.3'
 
   gem 'simple_form',        '~> 2.0'    # kick it?
   gem 'httparty',           '~> 0.8'
@@ -38,8 +38,8 @@ source 'http://rubygems.org'
   #  gem 'active_admin'
   #  gem 'kaminari'
 
-  gem 'fabrication',        '~> 1.3'    # for testing and seeding
-  gem 'ffaker',             '~> 1.13'
+  gem 'fabrication',        '~> 1.4'    # for testing and seeding
+  gem 'ffaker',             '~> 1.15'
 
 
 group :assets do
@@ -66,10 +66,10 @@ end
   
 # for an autotest-ish workflow:
 group :development do
-  gem 'spin',               '~> 0.1'
-  gem 'guard',              '~> 1.0'
-  gem 'guard-rspec',        '~> 0.5'
-  gem 'guard-spin',         '~> 0.1'
+  gem 'spin',               '~> 0.5'
+  gem 'guard',              '~> 1.2'
+  gem 'guard-rspec',        '~> 1.2'
+  gem 'guard-spin',         '~> 0.3'
   gem 'rb-fsevent',         :require => false
   gem 'growl_notify',       :require => false
 end
