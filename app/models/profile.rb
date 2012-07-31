@@ -2,6 +2,10 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_many :profile_ratings,  :dependent => :destroy
 
+  # hstore column is named 'properties'   # if you want to dump strings only, you dont need ' => :string '
+  hstore :properties, :accessors => [:twitter_nick, :google_mail, :twitter_thumbnail, :google_thumbnail]
+
+  # TODO: not production ready...
   attr_accessible :user_id, :name, :nickname, :location, :img_url, :thumbnail_url, :about, :website, :profession
 
   def set_twitter_attributes(hash)

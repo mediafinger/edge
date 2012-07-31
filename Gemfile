@@ -6,7 +6,8 @@ source 'http://rubygems.org'
   gem 'rails',              '3.2.7'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.50'
-  gem 'pg'                  # '~> 0.14'
+  gem 'pg',                 '~> 0.14'
+  gem 'hstore-attributes'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
@@ -53,7 +54,7 @@ end
 
 group :development, :test do
   # for development
-  gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
+  # gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
   gem 'annotate',           '~> 2.4'
 
   # for the tests

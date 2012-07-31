@@ -1,6 +1,6 @@
-sqlite: &sqlite
-  adapter: sqlite3
-  database: db/<%= Rails.env %>.sqlite3
+# sqlite: &sqlite
+#   adapter: sqlite3
+#   database: db/<%= Rails.env %>.sqlite3
 
 postgresql: &postgresql
   adapter: postgresql
@@ -13,7 +13,7 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>   # whatever is in this line will be the DB
+  <<: *postgresql      # *<%= ENV['DB'] || "postgresql" %>   # whatever is in this line will be the DB
 
 development:
   <<: *defaults
