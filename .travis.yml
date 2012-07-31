@@ -6,7 +6,7 @@ bundler_args: "--without development production"
 
 env: 
   - DB=postgresql
-  - DB=sqlite
+  # - DB=sqlite
 
 # matrix:
 #   allow_failures:
