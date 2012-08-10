@@ -46,7 +46,7 @@ group :assets do
   gem 'sass-rails',                 '~> 3.2'
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
-  gem 'twitter-bootstrap-rails',    '~> 2.0'
+  gem 'twitter-bootstrap-rails',    '~> 2.1'
   gem 'less-rails-fontawesome'
 end
 
