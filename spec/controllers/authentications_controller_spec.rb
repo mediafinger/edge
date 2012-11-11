@@ -13,13 +13,13 @@ describe AuthenticationsController do
   end
 
   it "create action should render new template when model is invalid" do
-    Authentication.any_instance.stubs(:valid?).returns(false)
+    Authentication.any_instance.stub(:valid?).and_return(false)
     post :create
     response.should redirect_to(authentications_url)
   end
 
   it "create action should redirect when model is valid" do
-    Authentication.any_instance.stubs(:valid?).returns(true)
+    Authentication.any_instance.stub(:valid?).and_return(true)
     post :create
     response.should redirect_to(authentications_url)
   end
