@@ -1,9 +1,10 @@
-source 'http://rubygems.org'
+source 'http://bundler-api.herokuapp.com'
+# source 'http://rubygems.org'
 
-  # running on ruby 1.9.3-p125 and 1.9.3-p194
+  # running on ruby 1.9.3 and ruby 2.0.0-preview1
 
-  gem 'rake',               '~> 0.9.2.2'
-  gem 'rails',              '3.2.8'
+  gem 'rake',               '~> 10.0.0.beta.2'
+  gem 'rails',              '3.2.9.rc3'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.50'
   gem 'pg'                  # '~> 0.14'
@@ -59,7 +60,6 @@ group :development, :test do
   # for the tests
   gem 'rspec-rails',        '~> 2.10'
   gem 'turn',               :require => false
-  gem 'mocha',              '~> 0.10'
   gem 'shoulda-matchers',   '~> 1.0'
 end
 
