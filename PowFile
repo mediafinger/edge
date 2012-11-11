@@ -1,0 +1,4 @@
+# Start with 'foreman start -f PowFile'
+
+web:        bundle exec rails server thin -p 3100
+edge_log:   tail -f ./log/development.log
