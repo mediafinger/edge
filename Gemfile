@@ -1,4 +1,5 @@
 source 'http://bundler-api.herokuapp.com'
+ruby '2.0.0'
 # source 'http://rubygems.org'
 
   # running on ruby 1.9.3 and ruby 2.0.0-preview1

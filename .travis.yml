@@ -11,7 +11,7 @@ env:
 
 matrix:
   allow_failures:
-    - rvm: ruby-head
+    #- rvm: ruby-head
     #- env: DB=postgresql
 
 before_script:
