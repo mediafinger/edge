@@ -27,7 +27,7 @@ source 'http://bundler-api.herokuapp.com'
 
   gem 'simple_form',        '~> 2.0'    # kick it?
   gem 'httparty',           '~> 0.8'
-  gem 'awesome_print',      '~> 1.0'
+  gem 'awesome_print',      '~> 1.1'
 
   #  gem 'copycopter_client',  '~> 2.0'    # all the translations
 
@@ -47,8 +47,8 @@ group :assets do
   gem 'sass-rails',                 '~> 3.2'
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
-  gem 'twitter-bootstrap-rails',    '~> 2.1'
-  gem 'less-rails-fontawesome'
+  gem 'twitter-bootstrap-rails',    '2.1.1'
+  gem 'less-rails-fontawesome',     '0.2.1'
 end
 
 
@@ -68,7 +68,7 @@ end
 group :development do
   gem 'spin',               '~> 0.5'
   gem 'guard',              '~> 1.2'
-  gem 'guard-rspec',        '~> 1.2'
+  gem 'guard-rspec',        '~> 2.1'
   gem 'guard-spin',         '~> 0.3'
   gem 'rb-fsevent',         :require => false
   gem 'growl_notify',       :require => false
