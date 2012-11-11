@@ -1,4 +1,4 @@
-**edge** is my playground to test the fresh Rails 3.2+ / Ruby 1.9.3 stuff
+**edge** is my playground to test the fresh Rails 3.2+ / Ruby 2.0.0 stuff
 
 Also playing with *devise*, *omniauth*, *remote apps*, *twitter-bootstrap* and *copycopter*.
 
