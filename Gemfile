@@ -8,7 +8,7 @@ ruby '2.0.0'
   gem 'rails',              '3.2.9.rc3'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.50'
-  gem 'pg'                  # '~> 0.14'
+  gem 'pg',                 '~> 0.14'
 
   gem 'haml-rails',         '~> 0.3'
   gem 'jquery-rails',       '~> 2.0'
@@ -25,12 +25,16 @@ ruby '2.0.0'
   gem 'omniauth-xing',      '~> 0.1'
 
   gem 'dropbox-api',        '~> 0.3'
-
-  gem 'simple_form',        '~> 2.0'    # kick it?
+  gem 'simple_form',        '~> 2.0'
   gem 'httparty',           '~> 0.8'
+  
   gem 'awesome_print',      '~> 1.1'
+  gem 'fabrication',        '~> 1.4'
+  gem 'ffaker',             '~> 1.15'
 
-  #  gem 'copycopter_client',  '~> 2.0'    # all the translations
+  gem 'twitter-bootstrap-rails',    '2.1.1'
+  # gem 'less-rails-fontawesome',    '~> 0.3'
+  #  gem 'copycopter_client',        '~> 2.0'    # all the translations
 
   #  gem 'cancan'
   #  gem 'decent_exposure'
@@ -40,38 +44,30 @@ ruby '2.0.0'
   #  gem 'active_admin'
   #  gem 'kaminari'
 
-  gem 'fabrication',        '~> 1.4'    # for testing and seeding
-  gem 'ffaker',             '~> 1.15'
-
 
 group :assets do
   gem 'sass-rails',                 '~> 3.2'
   gem 'coffee-rails',               '~> 3.2'
   gem 'uglifier',                   '~> 1.2'
-  gem 'less-rails',                 '~> 2.2'
-  gem 'twitter-bootstrap-rails',    '~> 2.1'
-  gem 'less-rails-fontawesome',     '~> 0.3'
 end
 
 
 group :development, :test do
   # for development
   gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
-  gem 'annotate',           '~> 2.4'
 
   # for the tests
   gem 'rspec-rails',        '~> 2.10'
-  gem 'turn',               :require => false
   gem 'shoulda-matchers',   '~> 1.0'
 end
 
   
-# for an autotest-ish workflow:
-group :development do
-  gem 'spin',               '~> 0.5'
-  gem 'guard',              '~> 1.2'
-  gem 'guard-rspec',        '~> 2.1'
-  gem 'guard-spin',         '~> 0.3'
-  gem 'rb-fsevent',         :require => false
-  gem 'growl_notify',       :require => false
-end
+# # for an autotest-ish workflow:
+# group :development do
+#   gem 'spin',               '~> 0.5'
+#   gem 'guard',              '~> 1.2'
+#   gem 'guard-rspec',        '~> 2.1'
+#   gem 'guard-spin',         '~> 0.3'
+#   gem 'rb-fsevent',         :require => false
+#   gem 'growl_notify',       :require => false
+# end

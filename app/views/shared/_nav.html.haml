@@ -2,13 +2,13 @@
 
 .navbar.navbar-fixed-top
   .navbar-inner
-    .container-fluid
+    .container
       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.brand{:href => root_path}Edge
-      .container-fluid.nav-collapse
+      .container.nav-collapse
        
         - if user_signed_in?
           %ul.nav

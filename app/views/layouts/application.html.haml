@@ -1,21 +1,21 @@
 !!! 5
-%html{:lang => "en"}
+%html(lang="en")
   %head
     = render 'shared/metahead'
 
   %body
     = render 'shared/nav'
     
-    .container-fluid
+    .container
 
-      .row-fluid
+      .row
         .span3
           = render 'shared/sidebar'
 
         .span9
           - flash.each do |key, value|
             = content_tag(:div, value, :class => "round flash #{key}")
-          
+
           %main
             = yield
 
