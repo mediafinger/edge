@@ -41,6 +41,9 @@ module Edge
 
     # Add folders to the assets path
     config.assets.paths << Rails.root.join("app", "assets", "fonts", "iconic_stroke")
+    
+    # Possible fix for heroku vs twitter-bootstrap issue ?
+    config.assets.precompile = [/^[-_a-zA-Z0-9]*\..*/]
 
     # Enable the asset pipeline
     config.assets.enabled = true
