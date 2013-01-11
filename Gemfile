@@ -5,7 +5,7 @@ ruby '2.0.0'
   # running on ruby 1.9.3 and ruby 2.0.0-preview1
 
   gem 'rake',               '~> 10.0.0.beta.2'
-  gem 'rails',              '3.2.8'
+  gem 'rails',              '3.2.11'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.50'
   gem 'pg',                 '~> 0.14'
