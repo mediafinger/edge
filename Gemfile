@@ -4,8 +4,8 @@ ruby '2.0.0'
 
   # running on ruby 1.9.3 and ruby 2.0.0-preview1
 
-  gem 'rake',               '~> 10.0.0.beta.2'
-  gem 'rails',              '3.2.11'
+  gem 'rake',               '~> 10.0.3'
+  gem 'rails',              '3.2.12'
   gem 'thin',               '~> 1.3'
   gem 'foreman',            '~> 0.50'
   gem 'pg',                 '~> 0.14'
@@ -28,12 +28,11 @@ ruby '2.0.0'
   gem 'simple_form',        '~> 2.0'
   gem 'httparty',           '~> 0.8'
   
-  gem 'awesome_print',      '~> 1.1'
   gem 'fabrication',        '~> 1.4'
   gem 'ffaker',             '~> 1.15'
 
   gem 'less-rails'
-  gem 'twitter-bootstrap-rails',    '2.1.1'
+  gem 'twitter-bootstrap-rails'
   # gem 'less-rails-fontawesome',    '~> 0.3'
   #  gem 'copycopter_client',        '~> 2.0'    # all the translations
 
@@ -56,6 +55,7 @@ end
 group :development, :test do
   # for development
   gem 'sqlite3',            '~> 1.3',   :platform => [:ruby]
+  gem 'awesome_print',      '~> 1.1'
 
   # for the tests
   gem 'rspec-rails',        '~> 2.10'
