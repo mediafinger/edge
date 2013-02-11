@@ -1,7 +1,7 @@
 Fabricator(:user) do
   email                   { |user| Faker::Name.first_name + "@example.com".downcase }
   password                { |user| 'password' }
-  password_confirmation   { |user| user.password }
+  password_confirmation   { |user| 'password' }
 
   after_create { |user| user.update_attribute(:profile, Fabricate(:profile)) } 
 end

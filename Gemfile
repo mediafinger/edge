@@ -28,7 +28,7 @@ ruby '2.0.0'
   gem 'simple_form',        '~> 2.0'
   gem 'httparty',           '~> 0.8'
   
-  gem 'fabrication',        '~> 1.4'
+  gem 'fabrication',        '~> 2.6'
   gem 'ffaker',             '~> 1.15'
 
   gem 'less-rails'
